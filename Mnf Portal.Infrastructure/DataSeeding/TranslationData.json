@@ -1,0 +1,244 @@
+[
+  {
+    "Header": "Football World Cup 2026 Announced #1",
+    "Abbreviation": "WorldCup",
+    "Body": "The Football World Cup 2026 will be hosted by the USA, Canada, and Mexico.",
+    "Source": "FIFA",
+    "LanguageId": 1,
+    "NewsId": 1
+  },
+  {
+    "Header": "الإعلان عن كأس العالم لكرة القدم 2026 #1",
+    "Abbreviation": "كأس العالم",
+    "Body": "ستستضيف الولايات المتحدة وكندا والمكسيك كأس العالم لكرة القدم 2026.  ",
+    "Source": "فيفا",
+    "LanguageId": 2,
+    "NewsId": 1
+  },
+  {
+    "Header": "Anunciado el Mundial de Fútbol 2026 #1",
+    "Abbreviation": "CopaMundial",
+    "Body": "La Copa Mundial de Fútbol 2026 será organizada por EE.UU., Canadá y México.  ",
+    "Source": "FIFA",
+    "LanguageId": 3,
+    "NewsId": 1
+  },
+  {
+    "Header": "Presidential Elections Results Announced #1",
+    "Abbreviation": "Elections",
+    "Body": "The results of the recent presidential elections have been officially released.  ",
+    "Source": "Reuters",
+    "LanguageId": 1,
+    "NewsId": 2
+  },
+  {
+    "Header": "إعلان نتائج الانتخابات الرئاسية #1",
+    "Abbreviation": "الانتخابات",
+    "Body": "تم الإعلان رسميًا عن نتائج الانتخابات الرئاسية الأخيرة.  ",
+    "Source": "رويترز",
+    "LanguageId": 2,
+    "NewsId": 2
+  },
+  {
+    "Header": "Resultados de las elecciones presidenciales anunciados #1",
+    "Abbreviation": "Elecciones",
+    "Body": "Se han publicado oficialmente los resultados de las últimas elecciones presidenciales.  ",
+    "Source": "Reuters",
+    "LanguageId": 3,
+    "NewsId": 2
+  },
+  {
+    "Header": "Football World Cup 2026 Announced #2",
+    "Abbreviation": "WorldCup",
+    "Body": "The Football World Cup 2026 will be hosted by the USA, Canada, and Mexico. (خبر رقم 2)",
+    "Source": "FIFA",
+    "LanguageId": 1,
+    "NewsId": 3
+  },
+  {
+    "Header": "الإعلان عن كأس العالم لكرة القدم 2026 #2",
+    "Abbreviation": "كأس العالم",
+    "Body": "ستستضيف الولايات المتحدة وكندا والمكسيك كأس العالم لكرة القدم 2026. (خبر رقم 2)",
+    "Source": "فيفا",
+    "LanguageId": 2,
+    "NewsId": 3
+  },
+  {
+    "Header": "Anunciado el Mundial de Fútbol 2026 #2",
+    "Abbreviation": "CopaMundial",
+    "Body": "La Copa Mundial de Fútbol 2026 será organizada por EE.UU., Canadá y México. (خبر رقم 2)",
+    "Source": "FIFA",
+    "LanguageId": 3,
+    "NewsId": 3
+  },
+  {
+    "Header": "Presidential Elections Results Announced #2",
+    "Abbreviation": "Elections",
+    "Body": "The results of the recent presidential elections have been officially released. (خبر رقم 2)",
+    "Source": "Reuters",
+    "LanguageId": 1,
+    "NewsId": 4
+  },
+  {
+    "Header": "إعلان نتائج الانتخابات الرئاسية #2",
+    "Abbreviation": "الانتخابات",
+    "Body": "تم الإعلان رسميًا عن نتائج الانتخابات الرئاسية الأخيرة. (خبر رقم 2)",
+    "Source": "رويترز",
+    "LanguageId": 2,
+    "NewsId": 4
+  },
+  {
+    "Header": "Resultados de las elecciones presidenciales anunciados #2",
+    "Abbreviation": "Elecciones",
+    "Body": "Se han publicado oficialmente los resultados de las últimas elecciones presidenciales. (خبر رقم 2)",
+    "Source": "Reuters",
+    "LanguageId": 3,
+    "NewsId": 4
+  },
+  {
+    "Header": "Football World Cup 2026 Announced #3",
+    "Abbreviation": "WorldCup",
+    "Body": "The Football World Cup 2026 will be hosted by the USA, Canada, and Mexico. (خبر رقم 3)",
+    "Source": "FIFA",
+    "LanguageId": 1,
+    "NewsId": 5
+  },
+  {
+    "Header": "الإعلان عن كأس العالم لكرة القدم 2026 #3",
+    "Abbreviation": "كأس العالم",
+    "Body": "ستستضيف الولايات المتحدة وكندا والمكسيك كأس العالم لكرة القدم 2026. (خبر رقم 3)",
+    "Source": "فيفا",
+    "LanguageId": 2,
+    "NewsId": 5
+  },
+  {
+    "Header": "Anunciado el Mundial de Fútbol 2026 #3",
+    "Abbreviation": "CopaMundial",
+    "Body": "La Copa Mundial de Fútbol 2026 será organizada por EE.UU., Canadá y México. (خبر رقم 3)",
+    "Source": "FIFA",
+    "LanguageId": 3,
+    "NewsId": 5
+  },
+  {
+    "Header": "Presidential Elections Results Announced #3",
+    "Abbreviation": "Elections",
+    "Body": "The results of the recent presidential elections have been officially released. (خبر رقم 3)",
+    "Source": "Reuters",
+    "LanguageId": 1,
+    "NewsId": 6
+  },
+  {
+    "id": 17,
+    "Header": "إعلان نتائج الانتخابات الرئاسية #3",
+    "Abbreviation": "الانتخابات",
+    "Body": "تم الإعلان رسميًا عن نتائج الانتخابات الرئاسية الأخيرة. (خبر رقم 3)",
+    "Source": "رويترز",
+    "LanguageId": 2,
+    "NewsId": 6
+  },
+  {
+    "id": 18,
+    "Header": "Resultados de las elecciones presidenciales anunciados #3",
+    "Abbreviation": "Elecciones",
+    "Body": "Se han publicado oficialmente los resultados de las últimas elecciones presidenciales. (خبر رقم 3)",
+    "Source": "Reuters",
+    "LanguageId": 3,
+    "NewsId": 6
+  },
+  {
+    "Header": "Football World Cup 2026 Announced #4",
+    "Abbreviation": "WorldCup",
+    "Body": "The Football World Cup 2026 will be hosted by the USA, Canada, and Mexico. (خبر رقم 4)",
+    "Source": "FIFA",
+    "LanguageId": 1,
+    "NewsId": 7
+  },
+  {
+    "Header": "الإعلان عن كأس العالم لكرة القدم 2026 #4",
+    "Abbreviation": "كأس العالم",
+    "Body": "ستستضيف الولايات المتحدة وكندا والمكسيك كأس العالم لكرة القدم 2026. (خبر رقم 4)",
+    "Source": "فيفا",
+    "LanguageId": 2,
+    "NewsId": 7
+  },
+  {
+    "Header": "Anunciado el Mundial de Fútbol 2026 #4",
+    "Abbreviation": "CopaMundial",
+    "Body": "La Copa Mundial de Fútbol 2026 será organizada por EE.UU., Canadá y México. (خبر رقم 4)",
+    "Source": "FIFA",
+    "LanguageId": 3,
+    "NewsId": 7
+  },
+  {
+    "Header": "Presidential Elections Results Announced #4",
+    "Abbreviation": "Elections",
+    "Body": "The results of the recent presidential elections have been officially released. (خبر رقم 4)",
+    "Source": "Reuters",
+    "LanguageId": 1,
+    "NewsId": 8
+  },
+  {
+    "Header": "إعلان نتائج الانتخابات الرئاسية #4",
+    "Abbreviation": "الانتخابات",
+    "Body": "تم الإعلان رسميًا عن نتائج الانتخابات الرئاسية الأخيرة. (خبر رقم 4)",
+    "Source": "رويترز",
+    "LanguageId": 2,
+    "NewsId": 8
+  },
+  {
+    "Header": "Resultados de las elecciones presidenciales anunciados #4",
+    "Abbreviation": "Elecciones",
+    "Body": "Se han publicado oficialmente los resultados de las últimas elecciones presidenciales. (خبر رقم 4)",
+    "Source": "Reuters",
+    "LanguageId": 3,
+    "NewsId": 8
+  },
+  {
+    "Header": "Football World Cup 2026 Announced #5",
+    "Abbreviation": "WorldCup",
+    "Body": "The Football World Cup 2026 will be hosted by the USA, Canada, and Mexico. (خبر رقم 5)",
+    "Source": "FIFA",
+    "LanguageId": 1,
+    "NewsId": 9
+  },
+  {
+    "Header": "الإعلان عن كأس العالم لكرة القدم 2026 #5",
+    "Abbreviation": "كأس العالم",
+    "Body": "ستستضيف الولايات المتحدة وكندا والمكسيك كأس العالم لكرة القدم 2026. (خبر رقم 5)",
+    "Source": "فيفا",
+    "LanguageId": 2,
+    "NewsId": 9
+  },
+  {
+    "Header": "Anunciado el Mundial de Fútbol 2026 #5",
+    "Abbreviation": "CopaMundial",
+    "Body": "La Copa Mundial de Fútbol 2026 será organizada por EE.UU., Canadá y México. (خبر رقم 5)",
+    "Source": "FIFA",
+    "LanguageId": 3,
+    "NewsId": 9
+  },
+  {
+    "Header": "Presidential Elections Results Announced #5",
+    "Abbreviation": "Elections",
+    "Body": "The results of the recent presidential elections have been officially released. (خبر رقم 5)",
+    "Source": "Reuters",
+    "LanguageId": 1,
+    "NewsId": 10
+  },
+  {
+    "Header": "إعلان نتائج الانتخابات الرئاسية #5",
+    "Abbreviation": "الانتخابات",
+    "Body": "تم الإعلان رسميًا عن نتائج الانتخابات الرئاسية الأخيرة. (خبر رقم 5)",
+    "Source": "رويترز",
+    "LanguageId": 2,
+    "NewsId": 10
+  },
+  {
+    "Header": "Resultados de las elecciones presidenciales anunciados #5",
+    "Abbreviation": "Elecciones",
+    "Body": "Se han publicado oficialmente los resultados de las últimas elecciones presidenciales. (خبر رقم 5)",
+    "Source": "Reuters",
+    "LanguageId": 3,
+    "NewsId": 10
+  }
+]
