@@ -1,0 +1,13 @@
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\bin\Debug\net9.0\Mnf Portal.Core.deps.json
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\bin\Debug\net9.0\Mnf Portal.Core.dll
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\bin\Debug\net9.0\Mnf Portal.Core.pdb
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\Mnf Portal.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\Mnf Portal.Core.AssemblyInfoInputs.cache
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\Mnf Portal.Core.AssemblyInfo.cs
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\Mnf Portal.Core.csproj.CoreCompileInputs.cache
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\Mnf Portal.Core.dll
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\refint\Mnf Portal.Core.dll
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\Mnf Portal.Core.pdb
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\ref\Mnf Portal.Core.dll
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\Mnf Portal.Core.csproj.AssemblyReference.cache
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.Core\obj\Debug\net9.0\Mnf Portal.Core.sourcelink.json

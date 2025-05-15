@@ -1,8 +1,17 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Mnf_Portal.APIs.Helpers;
+using Mnf_Portal.Core.Entities.Identity;
 using Mnf_Portal.Core.Interfaces;
+using Mnf_Portal.Core.Services;
+using Mnf_Portal.Infrastructure.Identity;
+using Mnf_Portal.Infrastructure.Identity.IdentityDataSeed;
 using Mnf_Portal.Infrastructure.Persistence;
 using Mnf_Portal.Infrastructure.Persistence.Repositories;
+using Mnf_Portal.Services;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 #region Configure Services
@@ -24,8 +33,36 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MnfDbContext>(options => options.UseSqlServer(connectionString));
 
+builder.Services.AddDbContext<MnfIdentityDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
+
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<MnfIdentityDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+                .AddJwtBearer(
+                    options =>
+                    {
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidateLifetime = true,
+                            ValidateIssuerSigningKey = true,
+                            ValidIssuer = builder.Configuration["JWT:Issuer"],
+                            ValidAudience = builder.Configuration["JWT:Audience"],
+                            IssuerSigningKey =
+                                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecretKey"]!))
+                        };
+                    });
+
 #endregion
 var app = builder.Build();
 
@@ -41,6 +78,14 @@ try
     await dbContext.Database.MigrateAsync();  // Apply migrations at startup
 
     await MnfDbContextSeed.SeedingAsync(dbContext);
+
+    var identityContext = services.GetRequiredService<MnfIdentityDbContext>(); // Ask CLR For Creating Object From AppIdentityDbContext Explicitly
+
+    await identityContext.Database.MigrateAsync();
+
+    var userManager = services.GetRequiredService<UserManager<AppUser>>();
+
+    await AppIdentityDbContextSeed.SeedUsersAsync(userManager);
 }
 catch (Exception ex)
 {
