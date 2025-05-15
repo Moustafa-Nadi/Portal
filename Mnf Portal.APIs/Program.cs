@@ -39,8 +39,7 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddIdentity<AppUser, IdentityRole>()
-    .AddEntityFrameworkStores<MnfIdentityDbContext>()
-    .AddDefaultTokenProviders();
+    .AddEntityFrameworkStores<MnfIdentityDbContext>();
 
 builder.Services.AddAuthentication(options =>
 {

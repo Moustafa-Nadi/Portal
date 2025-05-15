@@ -46,7 +46,7 @@ namespace Mnf_Portal.APIs.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto model)
         {
-            if (await _userManager.FindByEmailAsync(model.Email) is not null)
+            if (CheckEmailExists(model.Email).Result.Value)
                 return BadRequest("This Email already used!!");
             var user = new AppUser
             {
@@ -62,6 +62,8 @@ namespace Mnf_Portal.APIs.Controllers
             if (!result.Succeeded)
                 return BadRequest(HttpStatusCode.BadRequest);
 
+            await _userManager.AddToRoleAsync(user, "User"); //
+
             return Ok(
                 new UserDto
                 {
@@ -71,5 +73,8 @@ namespace Mnf_Portal.APIs.Controllers
                     Token = await _tokenService.CreateTokenAsync(user, _userManager)
                 });
         }
+
+        [HttpGet("emailExists")] // GET : / api/accounts/emailExists?email = SaraMohammed@gmail.com
+        public async Task<ActionResult<bool>> CheckEmailExists(string email) => await _userManager.FindByEmailAsync(email) is not null;
     }
 }
