@@ -89,11 +89,11 @@
           }
         }
       },
-      "MailKit/4.12.0": {
+      "MailKit/4.12.1": {
         "type": "package",
         "dependencies": {
           "MimeKit": "4.12.0",
-          "System.Formats.Asn1": "8.0.2"
+          "System.Formats.Asn1": "8.0.1"
         },
         "compile": {
           "lib/net8.0/MailKit.dll": {
@@ -171,7 +171,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/9.0.0": {
+      "Microsoft.AspNetCore.OpenApi/9.0.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.OpenApi": "1.6.17"
@@ -634,7 +634,7 @@
       "Microsoft.EntityFrameworkCore.Analyzers/9.0.5": {
         "type": "package"
       },
-      "Microsoft.EntityFrameworkCore.Design/9.0.4": {
+      "Microsoft.EntityFrameworkCore.Design/9.0.5": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.14.1",
@@ -643,13 +643,13 @@
           "Microsoft.CodeAnalysis.CSharp": "4.8.0",
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "4.8.0",
           "Microsoft.CodeAnalysis.Workspaces.MSBuild": "4.8.0",
-          "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyModel": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4",
+          "Microsoft.EntityFrameworkCore.Relational": "9.0.5",
+          "Microsoft.Extensions.Caching.Memory": "9.0.5",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.5",
+          "Microsoft.Extensions.DependencyModel": "9.0.5",
+          "Microsoft.Extensions.Logging": "9.0.5",
           "Mono.TextTemplating": "3.0.0",
-          "System.Text.Json": "9.0.4"
+          "System.Text.Json": "9.0.5"
         },
         "compile": {
           "lib/net8.0/_._": {
@@ -813,7 +813,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyModel/9.0.4": {
+      "Microsoft.Extensions.DependencyModel/9.0.5": {
         "type": "package",
         "compile": {
           "lib/net9.0/_._": {
@@ -1767,7 +1767,7 @@
           }
         }
       },
-      "System.Text.Json/9.0.4": {
+      "System.Text.Json/9.0.5": {
         "type": "package",
         "compile": {
           "lib/net9.0/System.Text.Json.dll": {
@@ -1974,10 +1974,10 @@
         "logo.png"
       ]
     },
-    "MailKit/4.12.0": {
-      "sha512": "DShr4dH9IZeUUQI7D5+zhxBKaiBrE/4+3APO2nSzCJwILv3lnViZew7yuoBJUWxAnwxzneJIFokxc8nvAQVZqg==",
+    "MailKit/4.12.1": {
+      "sha512": "rIqJm92qtHvk1hDchsJ95Hy7n46A7imE24ol++ikXBsjf3Bi1qDBu4H91FfY6LrYXJaxRlc2gIIpC8AOJrCbqg==",
       "type": "package",
-      "path": "mailkit/4.12.0",
+      "path": "mailkit/4.12.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2010,7 +2010,7 @@
         "lib/netstandard2.1/MailKit.dll.config",
         "lib/netstandard2.1/MailKit.pdb",
         "lib/netstandard2.1/MailKit.xml",
-        "mailkit.4.12.0.nupkg.sha512",
+        "mailkit.4.12.1.nupkg.sha512",
         "mailkit.nuspec"
       ]
     },
@@ -2083,10 +2083,10 @@
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.OpenApi/9.0.0": {
-      "sha512": "FqUK5j1EOPNuFT7IafltZQ3cakqhSwVzH5ZW1MhZDe4pPXs9sJ2M5jom1Omsu+mwF2tNKKlRAzLRHQTZzbd+6Q==",
+    "Microsoft.AspNetCore.OpenApi/9.0.5": {
+      "sha512": "yZLOciYlpaOO/mHPOpgeSZTv8Lc7fOOVX40eWJJoGs/S9Ny9CymDuKKQofGE9stXGGM9EEnnuPeq0fhR8kdFfg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.openapi/9.0.0",
+      "path": "microsoft.aspnetcore.openapi/9.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2095,7 +2095,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll",
         "lib/net9.0/Microsoft.AspNetCore.OpenApi.xml",
-        "microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
         "microsoft.aspnetcore.openapi.nuspec"
       ]
     },
@@ -3203,10 +3203,10 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/9.0.4": {
-      "sha512": "0NdtmsbYfMr2HyF+W6L+kPaHJl1nAmFjWj0MfI5G+CFeWZxDwltQxzzwSmZQ4QhS5z8zjczGXwHZ8e3iFaoiXA==",
+    "Microsoft.EntityFrameworkCore.Design/9.0.5": {
+      "sha512": "xOVWCGRF8DpOIoZ196/g7bdghc2e7Fp6R2vZPKndWv8A64bSDSaS7F2CUoqZpmSphUeT+1HDRpNYFRBQd8H71g==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/9.0.4",
+      "path": "microsoft.entityframeworkcore.design/9.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3215,7 +3215,7 @@
         "build/net8.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.9.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.9.0.5.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -3624,10 +3624,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyModel/9.0.4": {
-      "sha512": "ACtnvl3H3M/f8Z42980JxsNu7V9PPbzys4vBs83ZewnsgKd7JeYK18OMPo0g+MxAHrpgMrjmlinXDiaSRPcVnA==",
+    "Microsoft.Extensions.DependencyModel/9.0.5": {
+      "sha512": "+jdJ9Vz+5Ia21l3KjahtmeHCIgQ7urfkdcJPxSfeqB40Jqryi27Lt4fKBmKyvc0YrfTUJ0cEB7QmoQRlU8FH0g==",
       "type": "package",
-      "path": "microsoft.extensions.dependencymodel/9.0.4",
+      "path": "microsoft.extensions.dependencymodel/9.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3647,7 +3647,7 @@
         "lib/net9.0/Microsoft.Extensions.DependencyModel.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
-        "microsoft.extensions.dependencymodel.9.0.4.nupkg.sha512",
+        "microsoft.extensions.dependencymodel.9.0.5.nupkg.sha512",
         "microsoft.extensions.dependencymodel.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -5133,10 +5133,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/9.0.4": {
-      "sha512": "pYtmpcO6R3Ef1XilZEHgXP2xBPVORbYEzRP7dl0IAAbN8Dm+kfwio8aCKle97rAWXOExr292MuxWYurIuwN62g==",
+    "System.Text.Json/9.0.5": {
+      "sha512": "rnP61ZfloTgPQPe7ecr36loNiGX3g1PocxlKHdY/FUpDSsExKkTxpMAlB4X35wNEPr1X7mkYZuQvW3Lhxmu7KA==",
       "type": "package",
-      "path": "system.text.json/9.0.4",
+      "path": "system.text.json/9.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5199,7 +5199,7 @@
         "lib/net9.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.9.0.4.nupkg.sha512",
+        "system.text.json.9.0.5.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -5312,10 +5312,10 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "AutoMapper >= 14.0.0",
-      "MailKit >= 4.12.0",
-      "Microsoft.AspNetCore.OpenApi >= 9.0.0",
+      "MailKit >= 4.12.1",
+      "Microsoft.AspNetCore.OpenApi >= 9.0.5",
       "Microsoft.EntityFrameworkCore >= 9.0.5",
-      "Microsoft.EntityFrameworkCore.Design >= 9.0.4",
+      "Microsoft.EntityFrameworkCore.Design >= 9.0.5",
       "MimeKit >= 4.12.0",
       "Mnf Portal.Infrastructure >= 1.0.0",
       "Mnf Portal.Services >= 1.0.0",
@@ -5323,23 +5323,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\20155\\.nuget\\packages\\": {},
+    "C:\\Users\\ascom\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj",
+      "projectUniqueName": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj",
       "projectName": "Mnf Portal.APIs",
-      "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj",
-      "packagesPath": "C:\\Users\\20155\\.nuget\\packages\\",
-      "outputPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.APIs\\obj\\",
+      "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj",
+      "packagesPath": "C:\\Users\\ascom\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\20155\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ascom\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5354,11 +5354,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj": {
-              "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj"
+            "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj": {
+              "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj"
             },
-            "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {
-              "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj"
+            "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {
+              "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj"
             }
           }
         }
@@ -5373,7 +5373,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -5385,11 +5385,11 @@
           },
           "MailKit": {
             "target": "Package",
-            "version": "[4.12.0, )"
+            "version": "[4.12.1, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
-            "version": "[9.0.0, )"
+            "version": "[9.0.5, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -5399,7 +5399,7 @@
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.4, )"
+            "version": "[9.0.5, )"
           },
           "MimeKit": {
             "target": "Package",
@@ -5429,7 +5429,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

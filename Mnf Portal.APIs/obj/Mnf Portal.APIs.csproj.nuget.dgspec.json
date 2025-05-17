@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj": {}
+    "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj": {}
   },
   "projects": {
-    "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj": {
+    "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj",
+        "projectUniqueName": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj",
         "projectName": "Mnf Portal.APIs",
-        "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj",
-        "packagesPath": "C:\\Users\\20155\\.nuget\\packages\\",
-        "outputPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.APIs\\obj\\",
+        "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Mnf Portal.APIs.csproj",
+        "packagesPath": "C:\\Users\\ascom\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20155\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ascom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,11 +32,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj": {
-                "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj"
+              "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj": {
+                "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj"
               },
-              "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {
-                "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj"
+              "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {
+                "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj"
               }
             }
           }
@@ -51,7 +51,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -63,11 +63,11 @@
             },
             "MailKit": {
               "target": "Package",
-              "version": "[4.12.0, )"
+              "version": "[4.12.1, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -77,7 +77,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.5, )"
             },
             "MimeKit": {
               "target": "Package",
@@ -107,24 +107,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
+    "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj",
+        "projectUniqueName": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj",
         "projectName": "Mnf Portal.Core",
-        "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj",
-        "packagesPath": "C:\\Users\\20155\\.nuget\\packages\\",
-        "outputPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\obj\\",
+        "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj",
+        "packagesPath": "C:\\Users\\ascom\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20155\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ascom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -151,7 +151,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -190,24 +190,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj": {
+    "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj",
         "projectName": "Mnf Portal.Infrastructure",
-        "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\20155\\.nuget\\packages\\",
-        "outputPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Infrastructure\\obj\\",
+        "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ascom\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20155\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ascom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -222,8 +222,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
-                "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj"
+              "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
+                "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj"
               }
             }
           }
@@ -238,7 +238,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -283,24 +283,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {
+    "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj",
+        "projectUniqueName": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj",
         "projectName": "Mnf Portal.Services",
-        "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj",
-        "packagesPath": "C:\\Users\\20155\\.nuget\\packages\\",
-        "outputPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\obj\\",
+        "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj",
+        "packagesPath": "C:\\Users\\ascom\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20155\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ascom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -315,8 +315,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
-                "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj"
+              "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
+                "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj"
               }
             }
           }
@@ -331,7 +331,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -370,7 +370,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

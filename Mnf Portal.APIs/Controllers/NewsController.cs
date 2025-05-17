@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Mnf_Portal.APIs.DTOs;
+using Mnf_Portal.APIs.Errors;
 using Mnf_Portal.Core.Entities;
 using Mnf_Portal.Core.Interfaces;
 
@@ -16,6 +17,7 @@ namespace Mnf_Portal.APIs.Controllers
             _newsRepo = newsRepo;
             _mapper = mapper;
         }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<NewsDto>>> GetAll()
         {
@@ -36,6 +38,11 @@ namespace Mnf_Portal.APIs.Controllers
                 tracked: false,
                 n => n.Translations,
                 n => n.Gallaries);
+
+            if (news is null)
+            {
+                return NotFound(new ApiResponse(404, "Resource not Found"));
+            }
             var newsDto = _mapper.Map<NewsDto>(news);
             return Ok(newsDto);
         }

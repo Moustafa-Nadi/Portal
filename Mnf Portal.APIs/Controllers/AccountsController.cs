@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Mnf_Portal.APIs.DTOs;
+using Mnf_Portal.APIs.Errors;
 using Mnf_Portal.Core.Entities.Identity;
 using Mnf_Portal.Core.Services;
-using System.Net;
 
 namespace Mnf_Portal.APIs.Controllers
 {
@@ -32,16 +32,13 @@ namespace Mnf_Portal.APIs.Controllers
         {
             var user = await _userManager.FindByEmailAsync(userModel.Email);
             if (user is null)
-                return Unauthorized("Authorized, You are not!");
+                return Unauthorized(new ApiResponse(401, "Authorized, You are not!"));
             var result = await _signInManager.CheckPasswordSignInAsync(user, userModel.Password, false);
             if (!result.Succeeded)
-                return Unauthorized("Authorized, You are not!");
-
+                return Unauthorized(new ApiResponse(401, "Authorized, You are not!"));
             return Ok(
                 new UserDto
                 {
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
                     Email = user.Email!,
                     Token = await _tokenService.CreateTokenAsync(user, _userManager)
                 });
@@ -51,7 +48,7 @@ namespace Mnf_Portal.APIs.Controllers
         public async Task<ActionResult<UserDto>> Register(RegisterDto model)
         {
             if (CheckEmailExists(model.Email).Result.Value)
-                return BadRequest("This Email already used!!");
+                return BadRequest(new ApiResponse(400, "Bad Request, you have made!"));
             var user = new AppUser
             {
                 FirstName = model.FirstName,
@@ -64,31 +61,27 @@ namespace Mnf_Portal.APIs.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (!result.Succeeded)
-                return BadRequest(HttpStatusCode.BadRequest);
+                return BadRequest(new ApiResponse(400, "Bad Request, you have made!"));
 
             await _userManager.AddToRoleAsync(user, "User"); //
 
             return Ok(
                 new UserDto
                 {
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
                     Email = user.Email,
                     Token = await _tokenService.CreateTokenAsync(user, _userManager)
                 });
         }
 
-
-
         [HttpGet("emailExists")] // GET : / api/accounts/emailExists?email = SaraMohammed@gmail.com
         public async Task<ActionResult<bool>> CheckEmailExists(string email) => await _userManager.FindByEmailAsync(email) is not null;
-       
-        
+
+
         [HttpPost("forgot-password")] // POST : /api/accounts/ forgot-password
-        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto model)
+        public async Task<ActionResult<string>> ForgetPassword([FromBody] ForgotPasswordDto model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
-            if (user == null)
+            if (user is null)
                 return Ok("If the email exists, a reset link will be sent.");
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
@@ -105,17 +98,17 @@ namespace Mnf_Portal.APIs.Controllers
         }
 
         [HttpPost("reset-password")]  // POST : /api/accounts/ reset-password
-        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto model)
+        public async Task<ActionResult<string>> ResetPassword([FromBody] ResetPasswordDto model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
-            if (user == null)
-                return BadRequest("Invalid request.");
+            if (user is null)
+                return BadRequest(new ApiResponse(400, "Bad Request, you have made!"));
 
             var decodedToken = Uri.UnescapeDataString(model.Token);
             var result = await _userManager.ResetPasswordAsync(user, decodedToken, model.NewPassword);
 
             if (!result.Succeeded)
-                return BadRequest(result.Errors);
+                return BadRequest(new ApiResponse(400, "Bad Request, you have made!"));
 
             return Ok("Password reset successful.");
         }

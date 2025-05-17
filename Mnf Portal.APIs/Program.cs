@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Mnf_Portal.APIs.Errors;
 using Mnf_Portal.APIs.Helpers;
 using Mnf_Portal.Core.Entities.Identity;
 using Mnf_Portal.Core.Interfaces;
@@ -20,11 +22,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<EmailService>();
 
 builder.Services.AddControllers();
-//.AddJsonOptions(options =>
-//{
-//    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
-//    options.JsonSerializerOptions.WriteIndented = true;
-//})
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
 builder.Services.AddEndpointsApiExplorer();
@@ -34,35 +32,52 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MnfDbContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDbContext<MnfIdentityDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
+builder.Services
+    .AddDbContext<MnfIdentityDbContext>(
+        options => options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddIdentity<AppUser, IdentityRole>()
-    .AddEntityFrameworkStores<MnfIdentityDbContext>();
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<MnfIdentityDbContext>();
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-                .AddJwtBearer(
-                    options =>
-                    {
-                        options.TokenValidationParameters = new TokenValidationParameters
-                        {
-                            ValidateIssuer = true,
-                            ValidateAudience = true,
-                            ValidateLifetime = true,
-                            ValidateIssuerSigningKey = true,
-                            ValidIssuer = builder.Configuration["JWT:Issuer"],
-                            ValidAudience = builder.Configuration["JWT:Audience"],
-                            IssuerSigningKey =
-                                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecretKey"]!))
-                        };
-                    });
+builder.Services
+    .AddAuthentication(
+        options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        })
+    .AddJwtBearer(
+        options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = builder.Configuration["JWT:Issuer"],
+                ValidAudience = builder.Configuration["JWT:Audience"],
+                IssuerSigningKey =
+                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecretKey"]!))
+            };
+        });
 
+builder.Services
+    .Configure<ApiBehaviorOptions>(
+        option => option.InvalidModelStateResponseFactory =
+            actionContext =>
+            {
+                var errors = actionContext.ModelState
+                    .Where(P => P.Value!.Errors.Count > 0)
+                    .SelectMany(P => P.Value!.Errors)
+                    .Select(E => E.ErrorMessage)
+                    .ToArray();
+                var responseError = new ApiValidationErrorResponse { Errors = errors };
+
+                return new BadRequestObjectResult(responseError);
+            });
 #endregion
 var app = builder.Build();
 
