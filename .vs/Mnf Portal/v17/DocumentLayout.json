@@ -7,24 +7,36 @@
       "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE3FDE98-0E5B-4B2D-8CCC-18D7D5DE2B90}|Mnf Portal.Services\\Mnf Portal.Services.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE3FDE98-0E5B-4B2D-8CCC-18D7D5DE2B90}|Mnf Portal.Services\\Mnf Portal.Services.csproj|solutionrelative:mnf portal.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.apis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.apis\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.apis\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BE3FDE98-0E5B-4B2D-8CCC-18D7D5DE2B90}|Mnf Portal.Services\\Mnf Portal.Services.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE3FDE98-0E5B-4B2D-8CCC-18D7D5DE2B90}|Mnf Portal.Services\\Mnf Portal.Services.csproj|solutionrelative:mnf portal.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.apis\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7671ADFA-628F-4874-A8C4-EBD44CCA9880}|Mnf Portal.Core\\Mnf Portal.Core.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.core\\entities\\identity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7671ADFA-628F-4874-A8C4-EBD44CCA9880}|Mnf Portal.Core\\Mnf Portal.Core.csproj|solutionrelative:mnf portal.core\\entities\\identity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2A9A4E7B-EE0C-4356-AC9A-8D4D20192CA4}|Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.infrastructure\\identity\\mnfidentitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A9A4E7B-EE0C-4356-AC9A-8D4D20192CA4}|Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj|solutionrelative:mnf portal.infrastructure\\identity\\mnfidentitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.apis\\dtos\\newsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\dtos\\newsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.apis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A9A4E7B-EE0C-4356-AC9A-8D4D20192CA4}|Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.infrastructure\\identity\\identitydataseed\\appidentitydbcontextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.apis\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7671ADFA-628F-4874-A8C4-EBD44CCA9880}|Mnf Portal.Core\\Mnf Portal.Core.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.core\\entities\\identity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7671ADFA-628F-4874-A8C4-EBD44CCA9880}|Mnf Portal.Core\\Mnf Portal.Core.csproj|solutionrelative:mnf portal.core\\entities\\identity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7671ADFA-628F-4874-A8C4-EBD44CCA9880}|Mnf Portal.Core\\Mnf Portal.Core.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.core\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,16 +83,8 @@
       "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.apis\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2A9A4E7B-EE0C-4356-AC9A-8D4D20192CA4}|Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.infrastructure\\persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A9A4E7B-EE0C-4356-AC9A-8D4D20192CA4}|Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj|solutionrelative:mnf portal.infrastructure\\persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.apis\\dtos\\newsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D029DF38-984E-4FDD-B453-10855BED3B85}|Mnf Portal.APIs\\Mnf Portal.APIs.csproj|solutionrelative:mnf portal.apis\\dtos\\newsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A9A4E7B-EE0C-4356-AC9A-8D4D20192CA4}|Mnf Portal.Infrastructure\\Mnf Portal.Infrastructure.csproj|d:\\projects group\\backend\\mnf portal\\mnf portal.infrastructure\\dataseeding\\translationdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -246,19 +246,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Mnf Portal.Services\\TokenService.cs",
               "ToolTip": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\TokenService.cs",
               "RelativeToolTip": "Mnf Portal.Services\\TokenService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAmwB0AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvxcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T23:24:04.248Z"
+              "WhenOpened": "2025-05-14T23:24:04.248Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "ITokenService.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Services\\ITokenService.cs",
               "RelativeDocumentMoniker": "Mnf Portal.Core\\Services\\ITokenService.cs",
@@ -276,13 +277,14 @@
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\DTOs\\LoginDto.cs",
               "ToolTip": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\DTOs\\LoginDto.cs",
               "RelativeToolTip": "Mnf Portal.APIs\\DTOs\\LoginDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T23:06:31.657Z"
+              "WhenOpened": "2025-05-14T23:06:31.657Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "UserDto.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\DTOs\\UserDto.cs",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\DTOs\\UserDto.cs",
@@ -300,26 +302,27 @@
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\Controllers\\AccountsController.cs",
               "ToolTip": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Controllers\\AccountsController.cs",
               "RelativeToolTip": "Mnf Portal.APIs\\Controllers\\AccountsController.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAA3wEAAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAIA0wDgAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T23:04:25.232Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\DTOs\\RegisterDto.cs",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\DTOs\\RegisterDto.cs",
               "ToolTip": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\DTOs\\RegisterDto.cs",
               "RelativeToolTip": "Mnf Portal.APIs\\DTOs\\RegisterDto.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAmwBYAAAC4AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAmwBQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T22:54:38.299Z"
+              "WhenOpened": "2025-05-14T22:54:38.299Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "AppIdentityDbContextSeed.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Identity\\IdentityDataSeed\\AppIdentityDbContextSeed.cs",
               "RelativeDocumentMoniker": "Mnf Portal.Infrastructure\\Identity\\IdentityDataSeed\\AppIdentityDbContextSeed.cs",
@@ -331,31 +334,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "MnfIdentityDbContext.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Identity\\MnfIdentityDbContext.cs",
               "RelativeDocumentMoniker": "Mnf Portal.Infrastructure\\Identity\\MnfIdentityDbContext.cs",
               "ToolTip": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Identity\\MnfIdentityDbContext.cs",
               "RelativeToolTip": "Mnf Portal.Infrastructure\\Identity\\MnfIdentityDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T21:57:15.093Z"
+              "WhenOpened": "2025-05-14T21:57:15.093Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 5,
               "Title": "AppUser.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Entities\\Identity\\AppUser.cs",
               "RelativeDocumentMoniker": "Mnf Portal.Core\\Entities\\Identity\\AppUser.cs",
               "ToolTip": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Entities\\Identity\\AppUser.cs",
               "RelativeToolTip": "Mnf Portal.Core\\Entities\\Identity\\AppUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T21:53:33.478Z"
+              "WhenOpened": "2025-05-14T21:53:33.478Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "GallariesUrlResolver.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Helpers\\GallariesUrlResolver.cs",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\Helpers\\GallariesUrlResolver.cs",
@@ -367,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ImageUrlResolver.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Helpers\\ImageUrlResolver.cs",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\Helpers\\ImageUrlResolver.cs",
@@ -379,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Helpers\\MappingProfile.cs",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\Helpers\\MappingProfile.cs",
@@ -403,7 +408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "GallaryDto.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\DTOs\\GallaryDto.cs",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\DTOs\\GallaryDto.cs",
@@ -415,15 +420,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 7,
               "Title": "NewsDto.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\DTOs\\NewsDto.cs",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\DTOs\\NewsDto.cs",
               "ToolTip": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\DTOs\\NewsDto.cs",
               "RelativeToolTip": "Mnf Portal.APIs\\DTOs\\NewsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T12:42:36.324Z"
+              "WhenOpened": "2025-05-13T12:42:36.324Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -439,19 +445,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 1,
               "Title": "NewsController.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Controllers\\NewsController.cs",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\Controllers\\NewsController.cs",
               "ToolTip": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Controllers\\NewsController.cs",
               "RelativeToolTip": "Mnf Portal.APIs\\Controllers\\NewsController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAWwBQAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAWwBEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T09:25:36.807Z"
+              "WhenOpened": "2025-05-13T09:25:36.807Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "MnfDbContextSeed.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Persistence\\MnfDbContextSeed.cs",
               "RelativeDocumentMoniker": "Mnf Portal.Infrastructure\\Persistence\\MnfDbContextSeed.cs",
@@ -459,7 +466,8 @@
               "RelativeToolTip": "Mnf Portal.Infrastructure\\Persistence\\MnfDbContextSeed.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T06:17:05.848Z"
+              "WhenOpened": "2025-05-13T06:17:05.848Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -499,7 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
               "RelativeDocumentMoniker": "Mnf Portal.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
@@ -511,7 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Interfaces\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "Mnf Portal.Core\\Interfaces\\IGenericRepository.cs",
@@ -559,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\appsettings.json",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\appsettings.json",
@@ -619,7 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\Properties\\launchSettings.json",
@@ -631,7 +639,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.APIs\\Program.cs",
               "RelativeDocumentMoniker": "Mnf Portal.APIs\\Program.cs",

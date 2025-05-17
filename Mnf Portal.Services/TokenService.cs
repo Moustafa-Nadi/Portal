@@ -22,7 +22,8 @@ namespace Mnf_Portal.Services
             var authClaims = new List<Claim>
             {
                 new(ClaimTypes.GivenName, $"{appUser.FirstName} {appUser.LastName}"),
-                new(ClaimTypes.Email, appUser.Email!)
+                new(ClaimTypes.Email, appUser.Email!),
+                // UserName
             };
 
             var roles = await userManager.GetRolesAsync(appUser)!;

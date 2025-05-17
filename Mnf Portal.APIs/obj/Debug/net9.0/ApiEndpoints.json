@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "Mnf_Portal.APIs.Controllers.AccountsController",
+    "Method": "CheckEmailExists",
+    "RelativePath": "api/Accounts/emailExists",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Mnf_Portal.APIs.Controllers.AccountsController",
     "Method": "Login",
     "RelativePath": "api/Accounts/login",
     "HttpMethod": "POST",

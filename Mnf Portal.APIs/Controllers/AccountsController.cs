@@ -74,6 +74,8 @@ namespace Mnf_Portal.APIs.Controllers
                 });
         }
 
+
+
         [HttpGet("emailExists")] // GET : / api/accounts/emailExists?email = SaraMohammed@gmail.com
         public async Task<ActionResult<bool>> CheckEmailExists(string email) => await _userManager.FindByEmailAsync(email) is not null;
     }
