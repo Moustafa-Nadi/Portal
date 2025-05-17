@@ -17,6 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 #region Configure Services
 
 // Add services to the container.
+builder.Services.AddScoped<EmailService>();
 
 builder.Services.AddControllers();
 //.AddJsonOptions(options =>

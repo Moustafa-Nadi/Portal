@@ -12,15 +12,19 @@ namespace Mnf_Portal.APIs.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITokenService _tokenService;
+        private readonly EmailService _emailService;
 
         public AccountsController(
             UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
-            ITokenService tokenService)
+            ITokenService tokenService,
+            EmailService emailService
+            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenService = tokenService;
+            _emailService = emailService;
         }
 
         [HttpPost("login")] // POST : /api/accounts/ login
@@ -78,5 +82,42 @@ namespace Mnf_Portal.APIs.Controllers
 
         [HttpGet("emailExists")] // GET : / api/accounts/emailExists?email = SaraMohammed@gmail.com
         public async Task<ActionResult<bool>> CheckEmailExists(string email) => await _userManager.FindByEmailAsync(email) is not null;
+       
+        
+        [HttpPost("forgot-password")] // POST : /api/accounts/ forgot-password
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto model)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+                return Ok("If the email exists, a reset link will be sent.");
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var encodedToken = Uri.EscapeDataString(token);
+            var resetLink = $"https://your-frontend-url/reset-password?email={model.Email}&token={encodedToken}";
+
+            await _emailService.SendEmailAsync(
+                to: model.Email,
+                subject: "Reset Your Password",
+                body: $"<p>Click <a href='{resetLink}'>here</a> to reset your password.</p>"
+            );
+
+            return Ok("Reset password link sent.");
+        }
+
+        [HttpPost("reset-password")]  // POST : /api/accounts/ reset-password
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto model)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+                return BadRequest("Invalid request.");
+
+            var decodedToken = Uri.UnescapeDataString(model.Token);
+            var result = await _userManager.ResetPasswordAsync(user, decodedToken, model.NewPassword);
+
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
+
+            return Ok("Password reset successful.");
+        }
     }
 }
