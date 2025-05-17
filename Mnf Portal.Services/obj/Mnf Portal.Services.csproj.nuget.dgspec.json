@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {}
+    "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {}
   },
   "projects": {
-    "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
+    "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj",
+        "projectUniqueName": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj",
         "projectName": "Mnf Portal.Core",
-        "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj",
-        "packagesPath": "C:\\Users\\ascom\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\obj\\",
+        "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj",
+        "packagesPath": "C:\\Users\\20155\\.nuget\\packages\\",
+        "outputPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ascom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\20155\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,15 +44,27 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.12.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.12.0, )"
             }
           },
           "imports": [
@@ -71,24 +83,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {
+    "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj",
+        "projectUniqueName": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj",
         "projectName": "Mnf Portal.Services",
-        "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\Mnf Portal.Services.csproj",
-        "packagesPath": "C:\\Users\\ascom\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Services\\obj\\",
+        "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\Mnf Portal.Services.csproj",
+        "packagesPath": "C:\\Users\\20155\\.nuget\\packages\\",
+        "outputPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ascom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\20155\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -103,8 +115,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
-                "projectPath": "D:\\Projects Group\\Backend\\Mnf Portal\\Mnf Portal.Core\\Mnf Portal.Core.csproj"
+              "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj": {
+                "projectPath": "E:\\ITI\\GRADproject\\New folder\\Mnf Portal.Core\\Mnf Portal.Core.csproj"
               }
             }
           }
@@ -119,15 +131,27 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.12.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.12.0, )"
             }
           },
           "imports": [
@@ -146,7 +170,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

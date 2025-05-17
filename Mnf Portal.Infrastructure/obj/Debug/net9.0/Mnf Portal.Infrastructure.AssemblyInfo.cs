@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mnf Portal.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+995bb0b999a40faabba955c56d68495817c0e3b2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f02015a110a8cc248bb371110f20adb74b8b5d92")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mnf Portal.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mnf Portal.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

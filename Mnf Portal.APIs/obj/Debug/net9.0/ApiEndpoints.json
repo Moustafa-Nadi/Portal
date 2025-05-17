@@ -1,6 +1,48 @@
 [
   {
     "ContainingType": "Mnf_Portal.APIs.Controllers.AccountsController",
+    "Method": "CheckEmailExists",
+    "RelativePath": "api/Accounts/emailExists",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Mnf_Portal.APIs.Controllers.AccountsController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Accounts/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Mnf_Portal.APIs.DTOs.ForgotPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mnf_Portal.APIs.Controllers.AccountsController",
     "Method": "Login",
     "RelativePath": "api/Accounts/login",
     "HttpMethod": "POST",
@@ -50,6 +92,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Mnf_Portal.APIs.Controllers.AccountsController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Accounts/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Mnf_Portal.APIs.DTOs.ResetPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Mnf_Portal.APIs.Controllers.NewsController",
