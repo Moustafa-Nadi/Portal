@@ -37,3 +37,21 @@ Thumbs.db
 # Publish profiles
 *.pubxml
 *.publishproj
+# Ignore build outputs
+**/bin/
+**/obj/
+
+# User-specific files
+*.user
+*.suo
+
+# VS Code
+.vscode/
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Others
+*.log
+*.cache
