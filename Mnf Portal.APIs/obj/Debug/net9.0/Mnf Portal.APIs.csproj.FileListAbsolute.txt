@@ -362,3 +362,6 @@ E:\ITI\GRADproject\New folder\Mnf Portal.APIs\obj\Debug\net9.0\refint\Mnf Portal
 E:\ITI\GRADproject\New folder\Mnf Portal.APIs\obj\Debug\net9.0\Mnf Portal.APIs.pdb
 E:\ITI\GRADproject\New folder\Mnf Portal.APIs\obj\Debug\net9.0\Mnf Portal.APIs.genruntimeconfig.cache
 E:\ITI\GRADproject\New folder\Mnf Portal.APIs\obj\Debug\net9.0\ref\Mnf Portal.APIs.dll
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.APIs\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.APIs\bin\Debug\net9.0\MailKit.dll
+D:\Projects Group\Backend\Mnf Portal\Mnf Portal.APIs\bin\Debug\net9.0\MimeKit.dll

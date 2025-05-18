@@ -41,10 +41,22 @@ namespace Mnf_Portal.APIs.Controllers
 
             if (news is null)
             {
-                return NotFound(new ApiResponse(404, "Resource not Found"));
+                return NotFound(new ApiResponse(404, "Resource Not Found"));
             }
             var newsDto = _mapper.Map<NewsDto>(news);
             return Ok(newsDto);
+        }
+
+
+        [HttpDelete]   // DELETE : api/News
+        public async Task<ActionResult<bool>> DeleteNews(int id)
+        {
+            var removedNews = await _newsRepo.GetByIdAsync(n => n.News_Id == id);
+            if (removedNews is null)
+                return NotFound(new ApiResponse(404, "Resource Not Found"));
+
+            await _newsRepo.RemoveAsync(removedNews);
+            return Ok(true);
         }
     }
 }

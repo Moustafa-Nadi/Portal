@@ -2,7 +2,7 @@
 {
     public class NewsDto
     {
-        public int NewsId { get; set; }   // PK
+        //public int NewsId { get; set; }   // PK
 
         public DateTime Date { get; set; }
 
@@ -14,7 +14,7 @@
 
         public IReadOnlyList<string> Gallaries { get; set; }
 
-        public int LanguageId { get; set; }
+        public int LanguageId { get; set; } = 1;
 
         public string Header { get; set; }
 

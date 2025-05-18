@@ -139,8 +139,6 @@
         }
       }
     },
-<<<<<<< HEAD
-=======
     "/api/Accounts/forgot-password": {
       "post": {
         "tags": [
@@ -167,7 +165,24 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -198,12 +213,28 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
     },
->>>>>>> dee1f0785571b38f99ea9120cb3f849236dabaa0
     "/api/News": {
       "get": {
         "tags": [
@@ -275,6 +306,45 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NewsDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/News/remove": {
+      "delete": {
+        "tags": [
+          "News"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
                 }
               }
             }
@@ -356,10 +426,6 @@
       "NewsDto": {
         "type": "object",
         "properties": {
-          "newsId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "date": {
             "type": "string",
             "format": "date-time"

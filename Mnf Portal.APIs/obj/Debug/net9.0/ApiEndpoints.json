@@ -27,9 +27,7 @@
   },
   {
     "ContainingType": "Mnf_Portal.APIs.Controllers.AccountsController",
-<<<<<<< HEAD
-=======
-    "Method": "ForgotPassword",
+    "Method": "ForgetPassword",
     "RelativePath": "api/Accounts/forgot-password",
     "HttpMethod": "POST",
     "IsController": true,
@@ -41,11 +39,20 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Mnf_Portal.APIs.Controllers.AccountsController",
->>>>>>> dee1f0785571b38f99ea9120cb3f849236dabaa0
     "Method": "Login",
     "RelativePath": "api/Accounts/login",
     "HttpMethod": "POST",
@@ -110,7 +117,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Mnf_Portal.APIs.Controllers.NewsController",
@@ -149,6 +166,32 @@
     "ReturnTypes": [
       {
         "Type": "Mnf_Portal.APIs.DTOs.NewsDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Mnf_Portal.APIs.Controllers.NewsController",
+    "Method": "DeleteNews",
+    "RelativePath": "api/News/remove",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
         "MediaTypes": [
           "text/plain",
           "application/json",

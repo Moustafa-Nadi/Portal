@@ -14,6 +14,19 @@ namespace Mnf_Portal.Infrastructure.Persistence.Repositories
             _context = context;
             _dbSet = _context.Set<T>();
         }
+
+        public async Task CreateAsync(T entity)
+        {
+            await _context.AddAsync(entity);
+            await SaveAsync();
+        }
+
+        public async Task UpdateAsync(T entity)
+        {
+            _context.Update(entity);
+            await SaveAsync();
+        }
+
         public async Task<IEnumerable<T>> GetAllAsync(bool tracked = true, params Expression<Func<T, object>>[] Includes)
         {
             var query = _dbSet.AsQueryable();
@@ -47,5 +60,13 @@ namespace Mnf_Portal.Infrastructure.Persistence.Repositories
 
             return await query.FirstOrDefaultAsync();
         }
+
+        public async Task RemoveAsync(T entity)
+        {
+            _context.Remove(entity);
+            await SaveAsync();
+        }
+
+        public async Task SaveAsync() => await _context.SaveChangesAsync();
     }
 }
