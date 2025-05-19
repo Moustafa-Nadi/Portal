@@ -58,5 +58,34 @@ namespace Mnf_Portal.APIs.Controllers
             await _newsRepo.RemoveAsync(removedNews);
             return Ok(true);
         }
+
+        [HttpPost]  // POST : api/News  //CreateNews
+        public async Task<IActionResult> CreateNews([FromBody] NewsDto newsDto)
+        {
+            if (newsDto == null)
+                return BadRequest("News data is required");
+
+            var news = _mapper.Map<PortalNews>(newsDto);
+            news.Date = DateTime.UtcNow;
+
+            await _newsRepo.CreateAsync(news);
+            await _newsRepo.SaveAsync();
+
+            return CreatedAtAction(nameof(GetById), new { id = news.News_Id }, news);
+        }
+
+        [HttpPut("{id}")]// PUT : api/News/{id}// UpdateNews
+        public async Task<IActionResult> UpdateNews(int id, [FromBody] NewsDto newsDto)
+        {
+            var news = await _newsRepo.GetByIdAsync(n => n.News_Id == id);
+            if (news is null)
+                return NotFound(new ApiResponse(404, "Resource Not Found"));
+
+            _mapper.Map(newsDto, news);
+            await _newsRepo.UpdateAsync(news);
+            await _newsRepo.SaveAsync();
+
+            return NoContent();
+        }
     }
 }
