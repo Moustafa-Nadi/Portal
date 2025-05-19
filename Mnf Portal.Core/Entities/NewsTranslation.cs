@@ -1,4 +1,6 @@
-﻿namespace Mnf_Portal.Core.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace Mnf_Portal.Core.Entities
 {
     public class NewsTranslation
     {
@@ -15,7 +17,7 @@
         public int LanguageId { get; set; }
 
         public int? NewsId { get; set; }
-
+        [JsonIgnore]
         public PortalNews News { get; set; }
     }
 }

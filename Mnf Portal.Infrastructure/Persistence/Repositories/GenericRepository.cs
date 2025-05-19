@@ -27,28 +27,47 @@ namespace Mnf_Portal.Infrastructure.Persistence.Repositories
             await SaveAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(bool tracked = true, params Expression<Func<T, object>>[] Includes)
-        {
-            var query = _dbSet.AsQueryable();
-
-            query = Includes.Aggregate(query, (current, next) => current.Include(next));
-
-            query = query.AsSplitQuery();
-
-            if (!tracked)
-                query = query.AsNoTracking();
-
-            return await query.ToListAsync();
-        }
-
-        public async Task<T?> GetByIdAsync(Expression<Func<T, bool>> Criteria = null!, bool tracked = true, params Expression<Func<T, object>>[] Includes)
+        public async Task<IEnumerable<T>> GetAllAsync(
+            Expression<Func<T, bool>> Criteria = null!,
+            bool tracked = true,
+            int pageSize = 0,
+            int pageNumber = 0,
+            params Expression<Func<T, object>>[] Includes)
         {
             var query = _dbSet.AsQueryable();
 
             if (Criteria is { })
                 query = query.Where(Criteria);
 
-            if (Includes is { } && Includes.Length > 0)
+            if (Includes is { Length: > 0 })
+            {
+                foreach (var include in Includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+
+            if (!tracked)
+                query = query.AsNoTracking();
+
+
+            if (pageSize > 0 && pageNumber > 0)
+                query = query.Skip(pageSize * (pageNumber - 1)).Take(pageSize);
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<T?> GetByIdAsync(
+            Expression<Func<T, bool>> Criteria = null!,
+            bool tracked = true,
+            params Expression<Func<T, object>>[] Includes)
+        {
+            var query = _dbSet.AsQueryable();
+
+            if (Criteria is { })
+                query = query.Where(Criteria);
+
+            if (Includes is { Length: > 0 })
             {
                 foreach (var include in Includes)
                 {

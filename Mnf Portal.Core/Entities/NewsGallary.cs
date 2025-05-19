@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Mnf_Portal.Core.Entities
+﻿namespace Mnf_Portal.Core.Entities
 {
     public class NewsGallary
     {
@@ -9,7 +7,6 @@ namespace Mnf_Portal.Core.Entities
         public string ImageUrl { get; set; }
 
         public int NewsId { get; set; }
-        [JsonIgnore]
         public PortalNews PortalNews { get; set; }
     }
 }

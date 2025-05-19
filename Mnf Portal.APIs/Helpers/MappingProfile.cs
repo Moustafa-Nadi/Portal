@@ -12,6 +12,8 @@ namespace Mnf_Portal.APIs.Helpers
                 .ForMember(
                     dest => dest.Gallaries,
                     opt => opt.MapFrom(src => src.Gallaries.Select(g => g.ImageUrl).ToList()))
+                .ForMember(d => d.Image, O => O.MapFrom<ImageUrlResolver>())
+                .ForMember(dest => dest.Gallaries, opt => opt.MapFrom<GallariesUrlResolver>())
 
                 .ForMember(
                     dest => dest.Header,
@@ -19,7 +21,8 @@ namespace Mnf_Portal.APIs.Helpers
                 .ForMember(
                     dest => dest.Abbreviation,
                     opt => opt.MapFrom(src => src.Translations.Select(T => T!.Abbreviation).FirstOrDefault()))
-                //.ForMember(dest => dest.NewsId, opt => opt.MapFrom(src => src.News_Id))
+                .ForMember(dest => dest.NewsId, opt => opt.MapFrom(src => src.News_Id))
+                .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.ToShortDateString()))
                 .ForMember(
                     dest => dest.Body,
                     opt => opt.MapFrom(src => src.Translations.Select(T => T!.Body).FirstOrDefault()))
@@ -28,7 +31,8 @@ namespace Mnf_Portal.APIs.Helpers
                     opt => opt.MapFrom(src => src.Translations.Select(T => T!.Source).FirstOrDefault()))
                 .ForMember(
                     dest => dest.LanguageId,
-                    opt => opt.MapFrom(src => src.Translations.Select(T => T!.LanguageId).FirstOrDefault())).ReverseMap();
+                    opt => opt.MapFrom(src => src.Translations.Select(T => T!.LanguageId).FirstOrDefault()))
+                .ReverseMap();
 
             //        CreateMap<NewsDto, PortalNews>()
             //.ForMember(dest => dest.Gallaries,

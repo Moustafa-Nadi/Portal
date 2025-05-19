@@ -2,7 +2,7 @@
 {
     public class NewsDto
     {
-        //public int NewsId { get; set; }   // PK
+        public int NewsId { get; set; }   // PK
 
         public DateTime Date { get; set; }
 

@@ -4,28 +4,28 @@ using Mnf_Portal.APIs.DTOs;
 using Mnf_Portal.APIs.Errors;
 using Mnf_Portal.Core.Entities;
 using Mnf_Portal.Core.Interfaces;
+using Mnf_Portal.Core.Specification;
 
 namespace Mnf_Portal.APIs.Controllers
 {
     public class NewsController : ApiBaseController
     {
-        private readonly IGenericRepository<PortalNews> _newsRepo;
+        private readonly INewsService _newsSevices;
         private readonly IMapper _mapper;
+        private readonly IGenericRepository<PortalNews> _newsRepo;
 
-        public NewsController(IGenericRepository<PortalNews> newsRepo, IMapper mapper)
+        public NewsController(INewsService newsSevices, IMapper mapper, IGenericRepository<PortalNews> newsRepo)
         {
-            _newsRepo = newsRepo;
+            _newsSevices = newsSevices;
             _mapper = mapper;
+            _newsRepo = newsRepo;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<NewsDto>>> GetAll()
+        public async Task<ActionResult<IEnumerable<NewsDto>>> GetAll([FromQuery] NewsParams newsParams)
         {
-            var news = await _newsRepo.GetAllAsync(
+            var news = await _newsSevices.GetAllNews(newsParams);
 
-                tracked: false,
-                n => n.Translations,
-                n => n.Gallaries);
             var newsDto = _mapper.Map<IEnumerable<NewsDto>>(news);
             return Ok(newsDto);
         }
@@ -33,12 +33,8 @@ namespace Mnf_Portal.APIs.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<NewsDto>> GetById(int id)
         {
-            var news = await _newsRepo.GetByIdAsync(
-                n => n.News_Id == id,
-                tracked: false,
-                n => n.Translations,
-                n => n.Gallaries);
 
+            var news = await _newsSevices.GetNewsById(id);
             if (news is null)
             {
                 return NotFound(new ApiResponse(404, "Resource Not Found"));
@@ -51,7 +47,7 @@ namespace Mnf_Portal.APIs.Controllers
         [HttpDelete]   // DELETE : api/News
         public async Task<ActionResult<bool>> DeleteNews(int id)
         {
-            var removedNews = await _newsRepo.GetByIdAsync(n => n.News_Id == id);
+            var removedNews = await _newsSevices.GetNewsById(id);
             if (removedNews is null)
                 return NotFound(new ApiResponse(404, "Resource Not Found"));
 
@@ -59,7 +55,7 @@ namespace Mnf_Portal.APIs.Controllers
             return Ok(true);
         }
 
-        [HttpPost]  // POST : api/News  //CreateNews
+        [HttpPost]  // POST : api/News 
         public async Task<IActionResult> CreateNews([FromBody] NewsDto newsDto)
         {
             if (newsDto == null)
@@ -77,7 +73,7 @@ namespace Mnf_Portal.APIs.Controllers
         [HttpPut("{id}")]// PUT : api/News/{id}// UpdateNews
         public async Task<IActionResult> UpdateNews(int id, [FromBody] NewsDto newsDto)
         {
-            var news = await _newsRepo.GetByIdAsync(n => n.News_Id == id);
+            var news = await _newsSevices.GetNewsById(id);
             if (news is null)
                 return NotFound(new ApiResponse(404, "Resource Not Found"));
 
