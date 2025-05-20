@@ -1,6 +1,8 @@
 # Build results
 bin/
 obj/
+[Bb]in/
+[Oo]bj/
 TestResults/
 [Pp]ublish/
 
@@ -20,7 +22,7 @@ applicationhost.config
 # DevExpress & code analysis tools
 .cr/
 
-# VS Code & Rider
+# Rider and VS Code
 .idea/
 .vscode/
 
@@ -28,30 +30,24 @@ applicationhost.config
 *.DS_Store
 Thumbs.db
 
-# Binary & temp files
+# NuGet
+*.nupkg
+*.nuspec
+packages/
+.nuget.
+
+# Temp/cache files
 *.vsidx
 *.dtbcache.v2
 *.v9.bin
 *.backup.json
+*.cache
+*.tmp
 
 # Publish profiles
 *.pubxml
 *.publishproj
-# Ignore build outputs
-**/bin/
-**/obj/
 
-# User-specific files
-*.user
-*.suo
-
-# VS Code
-.vscode/
-
-# NuGet packages
-packages/
-*.nupkg
-
-# Others
-*.log
-*.cache
+# JSON settings or secrets
+secrets.json
+appsettings.Development.json
