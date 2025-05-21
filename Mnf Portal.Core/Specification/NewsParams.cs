@@ -13,8 +13,8 @@
 
         public string? Search { get => search; set => search = value.Trim().ToLower(); }
 
-        public DateTime? InitialDate { get; set; }
+        public DateTime? DateTime1 { get; set; }
 
-        public DateTime? FinalDate { get; set; }
+        public DateTime? DateTime2 { get; set; }
     }
 }
