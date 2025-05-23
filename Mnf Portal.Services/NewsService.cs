@@ -13,8 +13,8 @@ namespace Mnf_Portal.Services
         public async Task<IEnumerable<PortalNews>> GetAllNews(NewsParams newsParams)
         {
             var news = await _newsRepo.GetAllAsync(
-                N => (!newsParams.InitialDate.HasValue || N.Date.Date >= newsParams.InitialDate.Value.Date) &&
-                    (!newsParams.FinalDate.HasValue || N.Date.Date <= newsParams.FinalDate.Value.Date) &&
+                N => (!newsParams.DateTime1.HasValue || N.Date.Date >= newsParams.DateTime1.Value.Date) &&
+                    (!newsParams.DateTime2.HasValue || N.Date.Date <= newsParams.DateTime2.Value.Date) &&
                     (string.IsNullOrEmpty(newsParams.Search) ||
                         N.Translations.Any(T => T.Header.ToLower().Contains(newsParams.Search.ToLower()))),
 

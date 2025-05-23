@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Mnf_Portal.APIs.DTOs;
 using Mnf_Portal.APIs.Errors;
+using Mnf_Portal.APIs.Helpers;
 using Mnf_Portal.Core.Entities;
 using Mnf_Portal.Core.Interfaces;
 using Mnf_Portal.Core.Specification;
@@ -22,18 +23,18 @@ namespace Mnf_Portal.APIs.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<NewsDto>>> GetAll([FromQuery] NewsParams newsParams)
+        public async Task<ActionResult<IReadOnlyList<Pagination<NewsDto>>>> GetAll([FromQuery] NewsParams newsParams)
         {
             var news = await _newsSevices.GetAllNews(newsParams);
 
-            var newsDto = _mapper.Map<IEnumerable<NewsDto>>(news);
-            return Ok(newsDto);
+
+            var newsDto = _mapper.Map<IReadOnlyList<NewsDto>>(news);
+            return Ok(new Pagination<NewsDto>(newsParams.PageIndex, newsParams.PageSize, newsDto));
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<NewsDto>> GetById(int id)
         {
-
             var news = await _newsSevices.GetNewsById(id);
             if (news is null)
             {
@@ -71,17 +72,22 @@ namespace Mnf_Portal.APIs.Controllers
         }
 
         [HttpPut("{id}")]// PUT : api/News/{id}// UpdateNews
-        public async Task<IActionResult> UpdateNews(int id, [FromBody] NewsDto newsDto)
+        public async Task<ActionResult<PortalNews>> UpdateNews(int id, [FromBody] NewsDto newsDto)
         {
-            var news = await _newsSevices.GetNewsById(id);
-            if (news is null)
+            if (newsDto is null)
+                return BadRequest(new ApiResponse(400));
+
+            var oldNews = await _newsSevices.GetNewsById(id);
+            if (oldNews is null)
                 return NotFound(new ApiResponse(404, "Resource Not Found"));
 
-            _mapper.Map(newsDto, news);
-            await _newsRepo.UpdateAsync(news);
+            var updatedDto = _mapper.Map(newsDto, oldNews);
+
+            oldNews.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            await _newsRepo.UpdateAsync(oldNews);
             await _newsRepo.SaveAsync();
 
-            return NoContent();
+            return Ok(updatedDto);
         }
     }
 }

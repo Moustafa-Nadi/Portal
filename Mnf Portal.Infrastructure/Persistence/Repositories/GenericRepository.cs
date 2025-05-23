@@ -47,6 +47,8 @@ namespace Mnf_Portal.Infrastructure.Persistence.Repositories
                 }
             }
 
+            query = query.AsSplitQuery();
+
             if (!tracked)
                 query = query.AsNoTracking();
 
@@ -74,6 +76,7 @@ namespace Mnf_Portal.Infrastructure.Persistence.Repositories
                     query = query.Include(include);
                 }
             }
+            query = query.AsSplitQuery();
             if (!tracked)
                 query = query.AsNoTracking();
 
