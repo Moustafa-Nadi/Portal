@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Mnf_Portal.Infrastructure.Identity;
 
@@ -11,9 +12,11 @@ using Mnf_Portal.Infrastructure.Identity;
 namespace Mnf_Portal.Infrastructure.Identity.Migrations
 {
     [DbContext(typeof(MnfIdentityDbContext))]
-    partial class MnfIdentityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250528162628_addedRefreshToken")]
+    partial class addedRefreshToken
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

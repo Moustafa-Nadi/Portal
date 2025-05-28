@@ -10,7 +10,7 @@ namespace Mnf_Portal.Infrastructure.Configurations
         {
             builder.ToTable("prtl_News");
 
-            builder.HasKey(n => n.News_Id);
+            builder.HasKey(n => n.Id);
 
             builder.Property(n => n.IsFeatured)
                 .HasDefaultValue(false);

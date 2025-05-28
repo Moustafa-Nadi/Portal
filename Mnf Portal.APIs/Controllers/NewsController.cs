@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Mnf_Portal.APIs.DTOs;
 using Mnf_Portal.APIs.Errors;
 using Mnf_Portal.APIs.Helpers;
+using Mnf_Portal.Core.DTOs;
 using Mnf_Portal.Core.Entities;
 using Mnf_Portal.Core.Interfaces;
 using Mnf_Portal.Core.Specification;
@@ -13,9 +13,9 @@ namespace Mnf_Portal.APIs.Controllers
     {
         private readonly INewsService _newsSevices;
         private readonly IMapper _mapper;
-        private readonly IGenericRepository<PortalNews> _newsRepo;
+        private readonly IMnfContextRepo<PortalNews> _newsRepo;
 
-        public NewsController(INewsService newsSevices, IMapper mapper, IGenericRepository<PortalNews> newsRepo)
+        public NewsController(INewsService newsSevices, IMapper mapper, IMnfContextRepo<PortalNews> newsRepo)
         {
             _newsSevices = newsSevices;
             _mapper = mapper;
@@ -68,7 +68,7 @@ namespace Mnf_Portal.APIs.Controllers
             await _newsRepo.CreateAsync(news);
             await _newsRepo.SaveAsync();
 
-            return CreatedAtAction(nameof(GetById), new { id = news.News_Id }, news);
+            return CreatedAtAction(nameof(GetById), new { id = news.Id }, news);
         }
 
         [HttpPut("{id}")]// PUT : api/News/{id}// UpdateNews

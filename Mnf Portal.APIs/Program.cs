@@ -36,7 +36,8 @@ builder.Services
     .AddDbContext<MnfIdentityDbContext>(
         options => options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
 
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IMnfContextRepo<>), typeof(MnfContextRepo<>));
+builder.Services.AddScoped(typeof(IMnfIdentityContextRepo<>), typeof(MnfIdentityContextRepo<>));
 builder.Services.AddScoped<INewsService, NewsService>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<ITokenService, TokenService>();
@@ -52,6 +53,15 @@ builder.Services
     .AddJwtBearer(
         options =>
         {
+            options.Events = new JwtBearerEvents
+            {
+                OnMessageReceived = context =>
+                {
+                    context.Token = context.Request.Cookies["accessToken"];
+                    return Task.CompletedTask;
+                }
+            };
+
             options.TokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuer = true,
@@ -60,10 +70,24 @@ builder.Services
                 ValidateIssuerSigningKey = true,
                 ValidIssuer = builder.Configuration["JWT:Issuer"],
                 ValidAudience = builder.Configuration["JWT:Audience"],
+                ClockSkew = TimeSpan.Zero,
                 IssuerSigningKey =
                     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecretKey"]!))
             };
         });
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        "FrontendPolicy",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5173")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
 
 builder.Services
     .Configure<ApiBehaviorOptions>(
@@ -101,7 +125,9 @@ try
 
     var userManager = services.GetRequiredService<UserManager<AppUser>>();
 
-    await AppIdentityDbContextSeed.SeedUsersAsync(userManager);
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+    await AppIdentityDbContextSeed.SeedUsersAsync(userManager, roleManager);
 }
 catch (Exception ex)
 {

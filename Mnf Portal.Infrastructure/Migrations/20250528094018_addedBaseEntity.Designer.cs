@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Mnf_Portal.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using Mnf_Portal.Infrastructure.Persistence;
 namespace Mnf_Portal.Infrastructure.Migrations
 {
     [DbContext(typeof(MnfDbContext))]
-    partial class MnfDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250528094018_addedBaseEntity")]
+    partial class addedBaseEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +44,7 @@ namespace Mnf_Portal.Infrastructure.Migrations
 
                     b.HasIndex("NewsId");
 
-                    b.ToTable("Gallaries", (string)null);
+                    b.ToTable("Gallaries");
                 });
 
             modelBuilder.Entity("Mnf_Portal.Core.Entities.NewsTranslation", b =>

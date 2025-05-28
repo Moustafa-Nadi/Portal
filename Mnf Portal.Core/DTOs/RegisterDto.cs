@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Mnf_Portal.APIs.DTOs
+namespace Mnf_Portal.Core.DTOs
 {
     public class RegisterDto
     {
@@ -22,5 +22,7 @@ namespace Mnf_Portal.APIs.DTOs
             @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{6,}$",
             ErrorMessage = "Password must contain at least one uppercase letter, one lowercase letter, one number, one non-alphanumeric character, and be at least 6 characters long.")]
         public string Password { get; set; }
+
+        public string ComfimredPassword { get; set; }
     }
 }

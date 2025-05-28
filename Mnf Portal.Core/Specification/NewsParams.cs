@@ -5,6 +5,8 @@
         const int MaxPageSize = 10;
         private int pageSize = 5;
 
+        public int LangId { get; set; } = 1;
+
         public int PageSize { get => pageSize; set { pageSize = value > MaxPageSize ? MaxPageSize : value; } }
 
         public int PageIndex { get; set; } = 1;
