@@ -1,4 +1,4 @@
-﻿namespace Mnf_Portal.APIs.DTOs
+﻿namespace Mnf_Portal.Core.DTOs
 {
     public class GallaryDto
     {

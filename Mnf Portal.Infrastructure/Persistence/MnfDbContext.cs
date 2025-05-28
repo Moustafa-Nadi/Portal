@@ -7,10 +7,9 @@ namespace Mnf_Portal.Infrastructure.Persistence
     public class MnfDbContext(DbContextOptions<MnfDbContext> options) : DbContext(options)
     {
         public DbSet<PortalNews> News { get; set; }
-
         public DbSet<NewsTranslation> Translations { get; set; }
-
         public DbSet<NewsGallary> Gallaries { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

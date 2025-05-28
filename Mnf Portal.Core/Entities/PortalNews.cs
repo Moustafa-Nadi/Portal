@@ -1,9 +1,7 @@
 ﻿namespace Mnf_Portal.Core.Entities
 {
-    public class PortalNews
+    public class PortalNews : BaseEntity
     {
-        public int News_Id { get; set; }   // PK
-
         public DateTime Date { get; set; }
 
         public Guid OwnerId { get; set; }

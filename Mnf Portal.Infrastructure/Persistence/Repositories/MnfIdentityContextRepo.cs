@@ -1,15 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mnf_Portal.Core.Entities;
 using Mnf_Portal.Core.Interfaces;
+using Mnf_Portal.Infrastructure.Identity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Mnf_Portal.Infrastructure.Persistence.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class MnfIdentityContextRepo<T> : IMnfIdentityContextRepo<T> where T : BaseEntity
     {
-        private readonly MnfDbContext _context;
+        private readonly MnfIdentityDbContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public GenericRepository(MnfDbContext context)
+        public MnfIdentityContextRepo(MnfIdentityDbContext context)
         {
             _context = context;
             _dbSet = _context.Set<T>();
@@ -54,7 +61,7 @@ namespace Mnf_Portal.Infrastructure.Persistence.Repositories
 
 
             if (pageSize > 0 && pageNumber > 0)
-                query = query.Skip(pageSize * (pageNumber - 1)).Take(pageSize);
+                query = query.OrderBy(e => e.Id).Skip(pageSize * (pageNumber - 1)).Take(pageSize);
 
             return await query.ToListAsync();
         }
