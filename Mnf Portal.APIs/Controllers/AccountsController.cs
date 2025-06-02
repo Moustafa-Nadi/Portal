@@ -89,10 +89,10 @@ namespace Mnf_Portal.APIs.Controllers
 
 
         [HttpPost("register")]
-        public async Task<ActionResult<UserDto>> Register(RegisterDto model)
+        public async Task<ActionResult<UserDto>> Register([FromBody]RegisterDto model)
         {
             if (await CheckEmailExists(model.Email))
-                return BadRequest(new ApiResponse(400, "Bad Request, you have made!"));
+                return BadRequest(new ApiResponse(400, "the email is already token"));
 
             if (model.Password != model.ComfimredPassword)
                 return BadRequest(new ApiResponse(400, "Password do not match!"));

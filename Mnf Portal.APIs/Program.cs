@@ -43,6 +43,12 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<MnfIdentityDbContext>();
 
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequiredLength = 4;
+    options.Password.RequireNonAlphanumeric = true; //@, #, $, %, !, ?, and other special characters
+});
+
 builder.Services
     .AddAuthentication(
         options =>
@@ -144,6 +150,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("FrontendPolicy");
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseStaticFiles();
 
