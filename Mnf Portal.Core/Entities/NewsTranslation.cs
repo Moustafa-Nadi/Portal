@@ -2,10 +2,8 @@
 
 namespace Mnf_Portal.Core.Entities
 {
-    public class NewsTranslation
+    public class NewsTranslation : BaseEntity
     {
-        public int Id { get; set; }
-
         public string Header { get; set; }
 
         public string Abbreviation { get; set; }

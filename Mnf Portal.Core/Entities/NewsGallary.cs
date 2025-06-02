@@ -2,10 +2,8 @@
 
 namespace Mnf_Portal.Core.Entities
 {
-    public class NewsGallary
+    public class NewsGallary : BaseEntity
     {
-        public int Id { get; set; }
-
         public string ImageUrl { get; set; }
 
         public int NewsId { get; set; }
