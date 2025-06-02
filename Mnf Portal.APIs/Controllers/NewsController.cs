@@ -23,13 +23,14 @@ namespace Mnf_Portal.APIs.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Pagination<NewsDto>>>> GetAll([FromQuery] NewsParams newsParams)
+        public async Task<ActionResult> GetAll([FromQuery] NewsParams newsParams)
         {
             var news = await _newsSevices.GetAllNews(newsParams);
 
 
             var newsDto = _mapper.Map<IReadOnlyList<NewsDto>>(news);
-            return Ok(new Pagination<NewsDto>(newsParams.PageIndex, newsParams.PageSize, newsDto));
+            return Ok(newsDto);
+            //return Ok(new Pagination<NewsDto>(newsParams.PageIndex, newsParams.PageSize, newsDto));
         }
 
         [HttpGet("{id}")]
