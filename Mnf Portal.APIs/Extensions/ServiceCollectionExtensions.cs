@@ -48,6 +48,7 @@ namespace Mnf_Portal.APIs.Extensions
             services.AddScoped<INewsService, NewsService>();
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped(typeof(IMnfContextRepo<>), typeof(MnfContextRepo<>));
+            services.AddScoped(typeof(IMnfIdentityContextRepo<>), typeof(MnfIdentityContextRepo<>));
             return services;
         }
 
