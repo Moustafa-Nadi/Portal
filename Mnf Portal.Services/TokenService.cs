@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Mnf_Portal.Core.DTOs;
+using Mnf_Portal.APIs.DTOs;
 using Mnf_Portal.Core.Entities;
 using Mnf_Portal.Core.Entities.Identity;
 using Mnf_Portal.Core.Interfaces;

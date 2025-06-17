@@ -90,6 +90,35 @@ namespace Mnf_Portal.Infrastructure.Persistence.Repositories
             await SaveAsync();
         }
 
+        public Task<int> GetCountAsync(Expression<Func<T, bool>> Criteria = null!, bool tracked = true)
+        {
+            var query = _dbSet.AsQueryable();
+
+            if (Criteria is { })
+                query = query.Where(Criteria);
+
+            //if (Includes is { Length: > 0 })
+            //{
+            //    foreach (var include in Includes)
+            //    {
+            //        query = query.Include(include);
+            //    }
+            //}
+
+            query = query.AsSplitQuery();
+
+            if (!tracked)
+                query = query.AsNoTracking();
+
+
+            //if (pageSize > 0 && pageNumber > 0)
+            //    query = query.OrderBy(e => e.Id).Skip(pageSize * (pageNumber - 1)).Take(pageSize);
+
+            return query.CountAsync();
+        }
+
         public async Task SaveAsync() => await _context.SaveChangesAsync();
+
+
     }
 }

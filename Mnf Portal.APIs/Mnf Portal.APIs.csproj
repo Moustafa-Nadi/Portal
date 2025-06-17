@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mnf Portal.Core\Mnf Portal.Core.csproj" />
     <ProjectReference Include="..\Mnf Portal.Infrastructure\Mnf Portal.Infrastructure.csproj" />
     <ProjectReference Include="..\Mnf Portal.Services\Mnf Portal.Services.csproj" />
   </ItemGroup>

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Mnf_Portal.Core.DTOs;
+﻿using Mnf_Portal.APIs.DTOs;
 using Mnf_Portal.Core.Entities.Identity;
 
 namespace Mnf_Portal.Core.Services

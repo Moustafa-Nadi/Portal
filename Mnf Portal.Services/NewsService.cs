@@ -26,6 +26,15 @@ namespace Mnf_Portal.Services
             return news;
         }
 
+        public async Task<int> GetCount(NewsParams newsParams)
+        {
+            return await _newsRepo.GetCountAsync(N => (!newsParams.DateTime1.HasValue || N.Date.Date >= newsParams.DateTime1.Value.Date) &&
+                     (!newsParams.DateTime2.HasValue || N.Date.Date <= newsParams.DateTime2.Value.Date) &&
+                     (string.IsNullOrEmpty(newsParams.Search) || N.Translations.Any(T => T.Header.ToLower().Contains(newsParams.Search.ToLower()))),
+
+                 tracked: false);
+        }
+
         public async Task<PortalNews> GetNewsById(int id)
         {
             var news = await _newsRepo.GetByIdAsync(

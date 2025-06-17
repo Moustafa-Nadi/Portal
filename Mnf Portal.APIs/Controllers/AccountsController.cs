@@ -1,5 +1,4 @@
-﻿using Azure.Core;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Mnf_Portal.APIs.Errors;
 using Mnf_Portal.Core.DTOs;
@@ -8,9 +7,6 @@ using Mnf_Portal.Core.Entities.Identity;
 using Mnf_Portal.Core.Interfaces;
 using Mnf_Portal.Core.OtherObjects;
 using Mnf_Portal.Core.Services;
-using System.Data;
-using System.Net;
-using System.Runtime.InteropServices;
 
 namespace Mnf_Portal.APIs.Controllers
 {
@@ -29,7 +25,7 @@ namespace Mnf_Portal.APIs.Controllers
             SignInManager<AppUser> signInManager,
             ITokenService tokenService,
             EmailService emailService,
-            RoleManager<IdentityRole> roleManager, 
+            RoleManager<IdentityRole> roleManager,
             IConfiguration config,
             IMnfIdentityContextRepo<RefreshToken> repo
             )
@@ -89,7 +85,7 @@ namespace Mnf_Portal.APIs.Controllers
 
 
         [HttpPost("register")]
-        public async Task<ActionResult<UserDto>> Register([FromBody]RegisterDto model)
+        public async Task<ActionResult<UserDto>> Register([FromBody] RegisterDto model)
         {
             if (await CheckEmailExists(model.Email))
                 return BadRequest(new ApiResponse(400, "the email is already token"));

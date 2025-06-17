@@ -1,6 +1,7 @@
 using Mnf_Portal.APIs.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+
 #region Configure Services
 builder.Services.AddControllers();
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddCorsPolicies();
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
+
 #endregion
 var app = builder.Build();
 

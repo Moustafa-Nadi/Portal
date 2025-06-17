@@ -2,12 +2,7 @@
 using Mnf_Portal.Core.Entities;
 using Mnf_Portal.Core.Interfaces;
 using Mnf_Portal.Infrastructure.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mnf_Portal.Infrastructure.Persistence.Repositories
 {
@@ -97,5 +92,6 @@ namespace Mnf_Portal.Infrastructure.Persistence.Repositories
         }
 
         public async Task SaveAsync() => await _context.SaveChangesAsync();
+
     }
 }

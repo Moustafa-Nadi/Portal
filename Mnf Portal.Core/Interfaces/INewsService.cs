@@ -7,5 +7,7 @@ namespace Mnf_Portal.Core.Interfaces
     {
         Task<IEnumerable<PortalNews>> GetAllNews(NewsParams newsParams);
         Task<PortalNews> GetNewsById(int id);
+
+        Task<int> GetCount(NewsParams newsParams);
     }
 }
