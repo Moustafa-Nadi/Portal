@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Mnf_Portal.APIs.DTOs;
 using Mnf_Portal.APIs.Errors;
 using Mnf_Portal.APIs.Helpers;
 using Mnf_Portal.Core.DTOs;
@@ -60,18 +61,17 @@ namespace Mnf_Portal.APIs.Controllers
         }
 
         [HttpPost]  // POST : api/News 
-        public async Task<IActionResult> CreateNews([FromBody] NewsDto newsDto)
+        public async Task<ActionResult<CreateNewsDto>> CreateNews([FromBody] CreateNewsDto newsDto)
         {
-            if (newsDto == null)
-                return BadRequest("News data is required");
+            if (newsDto is null)
+                return BadRequest(new ApiResponse(404, "News data is required"));
 
             var news = _mapper.Map<PortalNews>(newsDto);
-            news.Date = DateTime.UtcNow;
 
             await _newsRepo.CreateAsync(news);
             await _newsRepo.SaveAsync();
 
-            return CreatedAtAction(nameof(GetById), new { id = news.Id }, news);
+            return Ok(news);
         }
 
         [HttpPut("{id}")]// PUT : api/News/{id}// UpdateNews

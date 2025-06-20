@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Mnf_Portal.APIs.DTOs;
 using Mnf_Portal.Core.DTOs;
 using Mnf_Portal.Core.Entities;
 
@@ -20,33 +21,19 @@ namespace Mnf_Portal.APIs.Helpers
                 .ForMember(dest => dest.NewsId, opt => opt.MapFrom(src => src.Id))
 
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.ToShortDateString()))
-                
+
                 .ForMember(dest => dest.Translations, opt => opt.MapFrom(ser => ser.Translations));
 
-                //.ForMember(
-                //    dest => dest.Header,
-                //    opt => opt.MapFrom(src => src.Translations.Select(T => T!.Header).FirstOrDefault()))
 
-                //.ForMember(
-                //    dest => dest.Abbreviation,
-                //    opt => opt.MapFrom(src => src.Translations.Select(T => T!.Abbreviation).FirstOrDefault()))
+            CreateMap<GallaryDto, NewsGallary>().ReverseMap();
+            CreateMap<TranslationDto, NewsTranslation>().ReverseMap();
+            CreateMap<CreateNewsDto, PortalNews>()
+                .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date))
+                .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Image))
+                .ForMember(dest => dest.IsFeatured, opt => opt.MapFrom(src => src.IsFeatured))
 
-                //.ForMember(
-                //    dest => dest.Body,
-                //    opt => opt.MapFrom(src => src.Translations.Select(T => T!.Body).FirstOrDefault()))
-
-                //.ForMember(
-                //    dest => dest.Source,
-                //    opt => opt.MapFrom(src => src.Translations.Select(T => T!.Source).FirstOrDefault()))
-
-                //.ForMember(
-                //    dest => dest.LanguageId,
-                //    opt => opt.MapFrom(src => src.Translations.Select(T => T!.LanguageId).FirstOrDefault()));
-
-            CreateMap<NewsDto, PortalNews>()
-            .ForMember(dest => dest.Gallaries, opt => opt.MapFrom(src =>
-                src.Gallaries.Select(url => new NewsGallary { ImageUrl = url }).ToList()
-            ));
+                .ForMember(dest => dest.Gallaries, opt => opt.MapFrom(src => src.Gallaries))
+                .ForMember(dest => dest.Translations, opt => opt.MapFrom(src => src.Translations));
         }
     }
 }
