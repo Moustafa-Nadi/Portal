@@ -12,7 +12,7 @@ namespace Mnf_Portal.APIs.Helpers
         public IReadOnlyList<string> Resolve(PortalNews source, NewsDto destination, IReadOnlyList<string> destMember, ResolutionContext context)
         {
             return source.Gallaries?
-            .Select(g => $"{_configuration["ApiBaseUrl"]}{g.ImageUrl}")
+            .Select(g => $"{_configuration["ApiBaseUrl"]}/Gallaries/{g.ImageUrl}")
             .ToList()
             .AsReadOnly() ?? new List<string>().AsReadOnly();
         }
