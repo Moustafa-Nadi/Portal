@@ -9,6 +9,7 @@ namespace Mnf_Portal.Infrastructure.Persistence
         public DbSet<PortalNews> News { get; set; }
         public DbSet<NewsTranslation> Translations { get; set; }
         public DbSet<NewsGallary> Gallaries { get; set; }
+        public DbSet<ContactUs> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

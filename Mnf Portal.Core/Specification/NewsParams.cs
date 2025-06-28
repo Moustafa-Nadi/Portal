@@ -8,8 +8,7 @@
 
         public int PageIndex { get; set; } = 1;
 
-        private string? search;
-        public string? Search { get => search; set => search = value.Trim().ToLower(); }
+        public string? Search { get; set; }
 
         public DateTime? DateTime1 { get; set; }
 

@@ -14,7 +14,7 @@ namespace Mnf_Portal.APIs.Helpers
         {
             if (!string.IsNullOrEmpty(source.Image))
             {
-                return $"{_configuration["ApiBaseUrl"]}/Images/{source.Image}";
+                return $"{_configuration["ApiBaseUrl"]}Images/{source.Image}";
             }
             return string.Empty;
         }
