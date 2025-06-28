@@ -23,6 +23,8 @@ namespace Mnf_Portal.APIs.Controllers
             _newsRepo = newsRepo;
         }
 
+
+
         [HttpGet]
         public async Task<ActionResult<Pagination<NewsDto>>> GetAll([FromQuery] NewsParams newsParams)
         {
@@ -35,6 +37,7 @@ namespace Mnf_Portal.APIs.Controllers
             // return Ok(newsDto);
             return Ok(new Pagination<NewsDto>(newsParams.PageIndex, newsParams.PageSize, count, data));
         }
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<NewsDto>> GetById(int id, int langId)
@@ -50,6 +53,7 @@ namespace Mnf_Portal.APIs.Controllers
             return Ok(newsDto);
         }
 
+
         [HttpDelete]   // DELETE : api/News
         public async Task<ActionResult<bool>> DeleteNews(int id)
         {
@@ -61,19 +65,82 @@ namespace Mnf_Portal.APIs.Controllers
             return Ok(true);
         }
 
+
         [HttpPost]  // POST : api/News 
-        public async Task<ActionResult<CreateNewsDto>> CreateNews([FromBody] CreateNewsDto newsDto)
+        public async Task<ActionResult<CreateNewsDto>> CreateNews([FromForm] CreateNewsDto newsDto)
         {
             if (newsDto is null)
                 return BadRequest(new ApiResponse(404, "News data is required"));
 
+            if (newsDto.Image is null || newsDto.Image.Length == 0)
+                return BadRequest(new ApiResponse(404, "main image is required"));
+
+            if (newsDto.Translations is null || newsDto.Translations.Count == 0)
+                return BadRequest(new ApiResponse(400, "Translations is required"));
+
+            string uniqueFileName = await UploadToImages(newsDto.Image);
+            ICollection<string> gallary = await UploadToGallery(newsDto.Gallary);
+
             var news = _mapper.Map<PortalNews>(newsDto);
+            news.Image = uniqueFileName;
+
+            foreach (var image in gallary)
+            {
+                var newsGallary = new NewsGallary()
+                {
+                    ImageUrl = image
+                };
+
+                news.Gallaries.Add(newsGallary);
+            }
 
             await _newsRepo.CreateAsync(news);
-            await _newsRepo.SaveAsync();
 
-            return Ok(news);
+            return Ok(newsDto);
         }
+        async Task<string> UploadToImages(IFormFile image)
+        {
+            var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Images");
+            if (!Directory.Exists(uploadsPath))
+            {
+                Directory.CreateDirectory(uploadsPath);
+            }
+
+            var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
+            var filepath = Path.Combine(uploadsPath, uniqueFileName);
+
+            using (var stream = new FileStream(filepath, FileMode.Create))
+            {
+                await image.CopyToAsync(stream);
+            }
+
+            return uniqueFileName;
+        }
+        async Task<ICollection<string>> UploadToGallery(ICollection<IFormFile> gallary)
+        {
+            ICollection<string> images = new List<string>();
+            var uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Gallary");
+            if (!Directory.Exists(uploadPath))
+            {
+                Directory.CreateDirectory(uploadPath);
+            }
+
+            foreach (var image in gallary)
+            {
+                var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
+                var filePath = Path.Combine(uploadPath, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await image.CopyToAsync(stream);
+                }
+
+                images.Add(uniqueFileName);
+            }
+
+            return images;
+        }
+
 
         [HttpPut("{id}")]// PUT : api/News/{id}// UpdateNews
         public async Task<ActionResult<PortalNews>> UpdateNews(int id, [FromBody] NewsDto newsDto)

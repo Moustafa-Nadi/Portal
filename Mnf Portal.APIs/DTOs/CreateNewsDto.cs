@@ -6,11 +6,11 @@ namespace Mnf_Portal.APIs.DTOs
     {
         public DateTime Date { get; set; }
         public Guid OwnerId { get; set; } = Guid.NewGuid();
-        public string Image { get; set; }
+        public IFormFile Image { get; set; }
 
         public bool IsFeatured { get; set; }
 
         public ICollection<TranslationDto> Translations { get; set; }
-        public ICollection<GallaryDto> Gallaries { get; set; }
+        public ICollection<IFormFile> Gallary { get; set; }
     }
 }
