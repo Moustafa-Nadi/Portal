@@ -49,6 +49,8 @@ namespace Mnf_Portal.APIs.Extensions
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped(typeof(IMnfContextRepo<>), typeof(MnfContextRepo<>));
             services.AddScoped(typeof(IMnfIdentityContextRepo<>), typeof(MnfIdentityContextRepo<>));
+            services.AddScoped(typeof(IEmailService), typeof(ContactUsService));
+
             return services;
         }
 
