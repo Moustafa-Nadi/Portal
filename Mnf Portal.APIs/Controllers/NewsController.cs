@@ -37,17 +37,18 @@ namespace Mnf_Portal.APIs.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<NewsDto>> GetById(int id)
+        public async Task<ActionResult<NewsDto>> GetById(int id, int langId)
         {
-            var news = await _newsSevices.GetNewsById(id);
+            var news = await _newsSevices.GetNewsByIdWithSpecificLang(id, langId);
+
             if (news is null)
             {
                 return NotFound(new ApiResponse(404, "Resource Not Found"));
             }
+
             var newsDto = _mapper.Map<NewsDto>(news);
             return Ok(newsDto);
         }
-
 
         [HttpDelete]   // DELETE : api/News
         public async Task<ActionResult<bool>> DeleteNews(int id)

@@ -120,5 +120,23 @@ namespace Mnf_Portal.Infrastructure.Persistence.Repositories
         public async Task SaveAsync() => await _context.SaveChangesAsync();
 
 
+        public async Task<T?> GetByIdWithSpecificAsync(Expression<Func<T, bool>> Criteria = null!, bool tracked = true, params Expression<Func<T, object>>[] Includes)
+        {
+            var query = _dbSet.AsQueryable();
+
+            if (Criteria is { })
+                query = query.Where(Criteria);
+            if (Includes is { Length: > 0 })
+            {
+                foreach (var include in Includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+            query = query.AsSplitQuery();
+            if (!tracked)
+                query = query.AsNoTracking();
+            return await query.FirstOrDefaultAsync();
+        }
     }
 }

@@ -44,5 +44,14 @@ namespace Mnf_Portal.Services
                 n => n.Gallaries);
             return news;
         }
+
+        public async Task<PortalNews> GetNewsByIdWithSpecificLang(int id, int langId)
+        {
+            return await _newsRepo.GetByIdWithSpecificAsync(
+                n => n.Id == id,
+                tracked: false,
+                n => n.Translations.Where(T => T!.LanguageId == langId),
+                n => n.Gallaries);
+        }
     }
 }

@@ -9,5 +9,7 @@ namespace Mnf_Portal.Core.Interfaces
         Task<PortalNews> GetNewsById(int id);
 
         Task<int> GetCount(NewsParams newsParams);
+
+        public Task<PortalNews> GetNewsByIdWithSpecificLang(int id, int langId);
     }
 }
