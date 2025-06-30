@@ -15,12 +15,14 @@ namespace Mnf_Portal.APIs.Controllers
         private readonly INewsService _newsSevices;
         private readonly IMapper _mapper;
         private readonly IMnfContextRepo<PortalNews> _newsRepo;
+        readonly IMnfContextRepo<NewsTranslation> _translation;
 
-        public NewsController(INewsService newsSevices, IMapper mapper, IMnfContextRepo<PortalNews> newsRepo)
+        public NewsController(INewsService newsSevices, IMapper mapper, IMnfContextRepo<PortalNews> newsRepo, IMnfContextRepo<NewsTranslation> translation)
         {
             _newsSevices = newsSevices;
             _mapper = mapper;
             _newsRepo = newsRepo;
+            _translation = translation;
         }
 
 
@@ -143,22 +145,46 @@ namespace Mnf_Portal.APIs.Controllers
 
 
         [HttpPut("{id}")]// PUT : api/News/{id}// UpdateNews
-        public async Task<ActionResult<PortalNews>> UpdateNews(int id, [FromBody] NewsDto newsDto)
+        public async Task<ActionResult<PortalNews>> UpdateNews(int id, int langId, [FromBody] UpdateNewsDto newsDto)
         {
             if (newsDto is null)
                 return BadRequest(new ApiResponse(400));
 
-            var oldNews = await _newsSevices.GetNewsById(id);
+            var oldNews = await _newsSevices.GetNewsByIdWithSpecificLang(id, langId);
+
             if (oldNews is null)
                 return NotFound(new ApiResponse(404, "Resource Not Found"));
 
-            var updatedDto = _mapper.Map(newsDto, oldNews);
+            _mapper.Map(newsDto, oldNews);
+            oldNews.Date = DateTime.Now;
 
-            oldNews.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            var currentTranslations = await _translation.GetAllAsync(t => t.NewsId == oldNews.Id && t.LanguageId == langId);
+
+            oldNews.Translations.Clear();
+
+            foreach (var item in currentTranslations)
+            {
+                await _translation.RemoveAsync(item);
+            }
+
+            foreach (var translationDto in newsDto.Translations)
+            {
+                var translation = _mapper.Map<NewsTranslation>(translationDto);
+                translation.NewsId = oldNews.Id;
+                oldNews.Translations.Add(translation);
+            }
+
+            //foreach (var translationDto in newsDto.Translations)
+            //{
+            //    var existing = currentTranslations.FirstOrDefault(t => t.LanguageId == translationDto.LanguageId);
+            //    _mapper.Map(translationDto, existing);
+            //}
+
+            //await _newsRepo.SaveAsync();
+
             await _newsRepo.UpdateAsync(oldNews);
-            await _newsRepo.SaveAsync();
 
-            return Ok(updatedDto);
+            return Ok(oldNews);
         }
     }
 }
