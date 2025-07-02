@@ -8,12 +8,12 @@ namespace Mnf_Portal.APIs.DTOs
 
         public Guid OwnerId { get; set; } = Guid.NewGuid();
 
-        public string Image { get; set; }
+        public IFormFile Image { get; set; }
 
         public bool IsFeatured { get; set; }
 
         public ICollection<TranslationDto> Translations { get; set; } = new List<TranslationDto>();
 
-        public ICollection<GallaryDto> Gallaries { get; set; } = new List<GallaryDto>();
+        public ICollection<IFormFile> Gallary { get; set; } = new List<IFormFile>();
     }
 }

@@ -1,72 +1,78 @@
 [
   {
     "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0027.jpg",
+    "Image": "IMG-20250225-WA0027.jpg",
     "OwnerId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
     "Translations": null,
-    "Gallaries": null
+    "Gallaries": null,
+    "IsFeatured":  true
   },
   {
     "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0028.jpg",
+    "Image": "IMG-20250225-WA0028.jpg",
     "OwnerId": "62D7DDF5-EEE9-4AA3-B30D-57975E6A9CA8",
     "Translations": null,
     "Gallaries": null
   },
   {
     "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0029.jpg",
+    "Image": "IMG-20250225-WA0029.jpg",
+    "OwnerId": "62D7DDF5-EEE9-4AA3-B30D-57975E6A9CA8",
+    "Translations": null,
+    "Gallaries": null,
+    "IsFeatured": true
+  },
+  {
+    "Date": "2025-03-15T12:00:00",
+    "Image": "IMG-20250225-WA0030.jpg",
+    "OwnerId": "62D7DDF5-EEE9-4AA3-B30D-57975E6A9CA8",
+    "Translations": null,
+    "Gallaries": null,
+    "IsFeatured": true
+  },
+  {
+    "Date": "2025-03-15T12:00:00",
+    "Image": "IMG-20250225-WA0031.jpg",
     "OwnerId": "62D7DDF5-EEE9-4AA3-B30D-57975E6A9CA8",
     "Translations": null,
     "Gallaries": null
   },
   {
     "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0030.jpg",
+    "Image": "IMG-20250225-WA0032.jpg",
+    "OwnerId": "57AAA1EC-69F7-4BCB-B86E-30FB9B926269",
+    "Translations": null,
+    "Gallaries": null,
+    "IsFeatured": true
+  },
+  {
+    "Date": "2025-03-15T12:00:00",
+    "Image": "IMG-20250225-WA0033.jpg",
     "OwnerId": "62D7DDF5-EEE9-4AA3-B30D-57975E6A9CA8",
     "Translations": null,
     "Gallaries": null
   },
   {
     "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0031.jpg",
-    "OwnerId": "62D7DDF5-EEE9-4AA3-B30D-57975E6A9CA8",
+    "Image": "IMG-20250225-WA0034.jpg",
+    "OwnerId": "57AAA1EC-69F7-4BCB-B86E-30FB9B926269",
     "Translations": null,
-    "Gallaries": null
+    "Gallaries": null,
+    "IsFeatured": true
   },
   {
     "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0032.jpg",
+    "Image": "IMG-20250225-WA0035.jpg",
     "OwnerId": "57AAA1EC-69F7-4BCB-B86E-30FB9B926269",
     "Translations": null,
     "Gallaries": null
   },
   {
     "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0033.jpg",
-    "OwnerId": "62D7DDF5-EEE9-4AA3-B30D-57975E6A9CA8",
-    "Translations": null,
-    "Gallaries": null
-  },
-  {
-    "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0034.jpg",
+    "Image": "IMG-20250225-WA0036.jpg",
     "OwnerId": "57AAA1EC-69F7-4BCB-B86E-30FB9B926269",
     "Translations": null,
-    "Gallaries": null
-  },
-  {
-    "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0035.jpg",
-    "OwnerId": "57AAA1EC-69F7-4BCB-B86E-30FB9B926269",
-    "Translations": null,
-    "Gallaries": null
-  },
-  {
-    "Date": "2025-03-15T12:00:00",
-    "Image": "/Images/IMG-20250225-WA0036.jpg",
-    "OwnerId": "57AAA1EC-69F7-4BCB-B86E-30FB9B926269",
-    "Translations": null,
-    "Gallaries": null
+    "Gallaries": null,
+    "IsFeatured": true
   }
 ]
