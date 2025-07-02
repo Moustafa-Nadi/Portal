@@ -25,7 +25,7 @@ namespace Mnf_Portal.Infrastructure.Identity.IdentityDataSeed
                 {
                     FirstName = "Mustafa",
                     LastName = "Nadi",
-                    Email = "Mustafa.Nadi@linkdev.com",
+                    Email = "Admin@gmail.com",
                     UserName = "Mustafa.Nadi",
                     PhoneNumber = "0101452681"
                 };

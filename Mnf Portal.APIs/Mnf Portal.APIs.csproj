@@ -26,4 +26,9 @@
     <ProjectReference Include="..\Mnf Portal.Services\Mnf Portal.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Gallary\" />
+    <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
+
 </Project>

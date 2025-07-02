@@ -7,6 +7,8 @@ using Mnf_Portal.Core.DTOs;
 using Mnf_Portal.Core.Entities;
 using Mnf_Portal.Core.Interfaces;
 using Mnf_Portal.Core.Specification;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Mnf_Portal.APIs.Controllers
 {
@@ -16,13 +18,15 @@ namespace Mnf_Portal.APIs.Controllers
         private readonly IMapper _mapper;
         private readonly IMnfContextRepo<PortalNews> _newsRepo;
         readonly IMnfContextRepo<NewsTranslation> _translation;
+        readonly IMnfContextRepo<NewsGallary> _Gallary;
 
-        public NewsController(INewsService newsSevices, IMapper mapper, IMnfContextRepo<PortalNews> newsRepo, IMnfContextRepo<NewsTranslation> translation)
+        public NewsController(INewsService newsSevices, IMapper mapper, IMnfContextRepo<PortalNews> newsRepo, IMnfContextRepo<NewsTranslation> translation, IMnfContextRepo<NewsGallary> gallary)
         {
             _newsSevices = newsSevices;
             _mapper = mapper;
             _newsRepo = newsRepo;
             _translation = translation;
+            _Gallary = gallary;
         }
 
 
@@ -69,7 +73,7 @@ namespace Mnf_Portal.APIs.Controllers
 
 
         [HttpPost]  // POST : api/News 
-        public async Task<ActionResult<CreateNewsDto>> CreateNews([FromForm] CreateNewsDto newsDto)
+        public async Task<ActionResult<PortalNews>> CreateNews([FromForm] CreateNewsDto newsDto)
         {
             if (newsDto is null)
                 return BadRequest(new ApiResponse(404, "News data is required"));
@@ -98,7 +102,7 @@ namespace Mnf_Portal.APIs.Controllers
 
             await _newsRepo.CreateAsync(news);
 
-            return Ok(newsDto);
+            return Ok(news);
         }
         async Task<string> UploadToImages(IFormFile image)
         {
@@ -129,7 +133,7 @@ namespace Mnf_Portal.APIs.Controllers
 
             foreach (var image in gallary)
             {
-                var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
+                string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
                 var filePath = Path.Combine(uploadPath, uniqueFileName);
 
                 using (var stream = new FileStream(filePath, FileMode.Create))
@@ -145,7 +149,7 @@ namespace Mnf_Portal.APIs.Controllers
 
 
         [HttpPut("{id}")]// PUT : api/News/{id}// UpdateNews
-        public async Task<ActionResult<PortalNews>> UpdateNews(int id, int langId, [FromBody] UpdateNewsDto newsDto)
+        public async Task<ActionResult<PortalNews>> UpdateNews(int id, int langId, [FromForm] UpdateNewsDto newsDto)
         {
             if (newsDto is null)
                 return BadRequest(new ApiResponse(400));
@@ -158,33 +162,89 @@ namespace Mnf_Portal.APIs.Controllers
             _mapper.Map(newsDto, oldNews);
             oldNews.Date = DateTime.Now;
 
-            var currentTranslations = await _translation.GetAllAsync(t => t.NewsId == oldNews.Id && t.LanguageId == langId);
-
             oldNews.Translations.Clear();
+            oldNews.Gallaries.Clear();
 
-            foreach (var item in currentTranslations)
-            {
-                await _translation.RemoveAsync(item);
-            }
+            await UpdateTranslations(newsDto.Translations, oldNews, langId);
+            await UpdateGallary(newsDto.Gallary, oldNews);
 
-            foreach (var translationDto in newsDto.Translations)
-            {
-                var translation = _mapper.Map<NewsTranslation>(translationDto);
-                translation.NewsId = oldNews.Id;
-                oldNews.Translations.Add(translation);
-            }
-
-            //foreach (var translationDto in newsDto.Translations)
-            //{
-            //    var existing = currentTranslations.FirstOrDefault(t => t.LanguageId == translationDto.LanguageId);
-            //    _mapper.Map(translationDto, existing);
-            //}
-
-            //await _newsRepo.SaveAsync();
-
+            string newImageName = await UpdateRootImage(newsDto.Image, oldNews);
+            oldNews.Image = newImageName;
             await _newsRepo.UpdateAsync(oldNews);
 
             return Ok(oldNews);
+        }
+
+        async Task UpdateTranslations(ICollection<TranslationDto> newTranslation, PortalNews updateNews, int langId)
+        {
+            var currentTranslations = (await _translation.GetAllAsync(t => t.NewsId == updateNews.Id && t.LanguageId == langId)).FirstOrDefault();
+
+            if (currentTranslations is not null)
+            {
+                await _translation.RemoveAsync(currentTranslations);
+            }
+
+            foreach (var item in newTranslation)
+            {
+                var translation = _mapper.Map<NewsTranslation>(item);
+                translation.NewsId = updateNews.Id;
+                updateNews.Translations.Add(translation);
+            }
+        }
+
+        async Task<string> UpdateRootImage(IFormFile image, PortalNews news)
+        {
+            string oldImage = news.Image;
+            var oldPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Images", oldImage);
+
+            if (System.IO.File.Exists(oldPath))
+            {
+                System.IO.File.Delete(oldPath);
+            }
+
+            string newImage = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
+            var newPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Images", newImage);
+
+            using (var stream = new FileStream(newPath, FileMode.Create))
+            {
+                await image.CopyToAsync(stream);
+            }
+
+            return newImage;
+        }
+
+        async Task UpdateGallary(ICollection<IFormFile> newGallary, PortalNews updateNews)
+        {
+            var currentGallary = await _Gallary.GetAllAsync(g => g.NewsId == updateNews.Id);
+
+            foreach (var item in currentGallary)
+            {
+                await _Gallary.RemoveAsync(item);
+
+                string image = item.ImageUrl;
+                var oldpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Gallary", image);
+                System.IO.File.Delete(oldpath);
+            }
+
+            foreach (var item in newGallary)
+            {
+                var uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Gallary");
+
+                string imageName = Guid.NewGuid().ToString() + Path.GetExtension(item.FileName);
+                var filePath = Path.Combine(uploadPath, imageName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await item.CopyToAsync(stream);
+                }
+
+                NewsGallary newsGallary = new()
+                {
+                    ImageUrl = imageName
+                };
+
+                updateNews.Gallaries.Add(newsGallary);
+            }
         }
     }
 }

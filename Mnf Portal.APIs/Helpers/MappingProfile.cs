@@ -23,13 +23,23 @@ namespace Mnf_Portal.APIs.Helpers
 
             CreateMap<GallaryDto, NewsGallary>().ReverseMap();
             CreateMap<TranslationDto, NewsTranslation>().ReverseMap();
-            CreateMap<UpdateNewsDto, PortalNews>().ReverseMap();
+
+            CreateMap<UpdateNewsDto, PortalNews>()
+                .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date))
+                .ForMember(dest => dest.OwnerId, opt => opt.MapFrom(src => src.OwnerId))
+                .ForMember(dest => dest.IsFeatured, opt => opt.MapFrom(src => src.IsFeatured))
+                .ForMember(dest => dest.Translations, opt => opt.MapFrom(src => src.Translations))
+                .ForMember(dest => dest.Image, opt => opt.Ignore())
+                .ForMember(dest => dest.Gallaries, opt => opt.Ignore());
+
 
             CreateMap<CreateNewsDto, PortalNews>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date))
                 .ForMember(dest => dest.OwnerId, opt => opt.MapFrom(src => src.OwnerId))
                 .ForMember(dest => dest.IsFeatured, opt => opt.MapFrom(src => src.IsFeatured))
-                .ForMember(dest => dest.Translations, opt => opt.MapFrom(src => src.Translations));
+                .ForMember(dest => dest.Translations, opt => opt.MapFrom(src => src.Translations))
+                .ForMember(dest => dest.Image, opt => opt.Ignore())
+                .ForMember(dest => dest.Gallaries, opt => opt.Ignore());
         }
     }
 }
